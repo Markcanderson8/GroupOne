@@ -26,8 +26,6 @@ public class UserController {
     private final Logger logger = LoggerFactory.getLogger(UserController.class);
     @Autowired
     private UserService userService;
-    @Autowired
-    private ItemService itemService;
 
     @PostMapping
     public ResponseEntity<User> saveUser(@RequestBody User user) {
