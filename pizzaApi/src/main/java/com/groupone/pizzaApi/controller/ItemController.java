@@ -15,38 +15,44 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import static com.groupone.pizzaApi.constants.StringConstants.*;
+
 @RestController
-@RequestMapping("/items")
+@RequestMapping(CONTEXT_ITEMS)
 public class ItemController {
     private final Logger logger = LoggerFactory.getLogger(ItemController.class);
     @Autowired
     private ItemService itemService;
 
     @PostMapping
-    public Item saveItem(@RequestBody Item item) {
-        return itemService.saveItem(item);
+    public ResponseEntity<Item> saveItem(@RequestBody Item item) {
+        logger.info(new Date() + LOGGER_POST_REQUEST_RECEIVED + item.toString());
+        return new ResponseEntity<>(itemService.saveItem(item), HttpStatus.CREATED);
     }
 
     @GetMapping
     public ResponseEntity<List<Item>> getItemList(Item item) {
-        logger.info(new Date() + "Post Request Received" + item.toString());
+        logger.info(new Date() + LOGGER_POST_REQUEST_RECEIVED + item.toString());
         return new ResponseEntity<>(itemService.fetchItemList(item), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public Optional<Item> getItemById(@PathVariable Long id) {
-        return itemService.getItemById(id);
+    public ResponseEntity<Item> getItemById(@PathVariable Long id) {
+        logger.info(new Date() + LOGGER_REQUEST_RECEIVED + id);
+        return new ResponseEntity<>(itemService.getItemById(id), HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
-    public Item updateItem(@PathVariable("id") Long id, @RequestBody Item item) {
-        return itemService.updateItem(id, item);
+    public ResponseEntity<Item> updateItem(@PathVariable Long id, @RequestBody Item item) {
+        logger.info(new Date() + LOGGER_PUT_REQUEST_RECEIVED + id);
+        return new ResponseEntity<>(itemService.updateItem(id, item), HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
-    public String deleteItem(@PathVariable("id") Long id) {
+    public ResponseEntity deleteItem(@PathVariable Long id) {
+        logger.info(new Date() + LOGGER_DELETE_REQUEST_RECEIVED + id);
         itemService.deleteItemById(id);
-        return "Deleted Successfully";
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 
 }

@@ -11,13 +11,16 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.image.RescaleOp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import static com.groupone.pizzaApi.constants.StringConstants.*;
+
 @RestController
-@RequestMapping("/users")
+@RequestMapping(CONTEXT_USERS)
 public class UserController {
 
     private final Logger logger = LoggerFactory.getLogger(UserController.class);
@@ -27,28 +30,33 @@ public class UserController {
     private ItemService itemService;
 
     @PostMapping
-    public User saveUser(@RequestBody User user) {
-        return userService.saveUser(user);
+    public ResponseEntity<User> saveUser(@RequestBody User user) {
+        logger.info(new Date() + LOGGER_POST_REQUEST_RECEIVED + user.toString());
+        return new ResponseEntity<>(userService.saveUser(user), HttpStatus.CREATED);
     }
 
     @GetMapping
     public ResponseEntity<List<User>> getUserList(User user) {
-        logger.info(new Date() + "Get request received for: " + user.toString());
+        logger.info(new Date() + LOGGER_REQUEST_RECEIVED + user.toString());
         return new ResponseEntity<>(userService.getAllUsers(user), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public Optional<User> getUserById(@PathVariable Long id) {
-        return userService.getUserById(id);
+    public ResponseEntity<User> getUserById(@PathVariable Long id) {
+        logger.info(new Date() + LOGGER_REQUEST_RECEIVED + id);
+        return new ResponseEntity<>(userService.getUserById(id), HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
-    public User updateUser(@PathVariable Long id, @RequestBody User user) {
-        return userService.updateUser(id, user);
+    public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User user) {
+        logger.info(new Date() + LOGGER_PUT_REQUEST_RECEIVED + id);
+        return new ResponseEntity<>(userService.updateUser(id, user), HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable Long id) {
+    public ResponseEntity deleteUser(@PathVariable Long id) {
+        logger.info(new Date() + LOGGER_DELETE_REQUEST_RECEIVED + id);
         userService.deleteUserById(id);
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 }

@@ -10,7 +10,7 @@ public interface ItemService {
 
     List<Item> fetchItemList(Item item);
 
-    Optional<Item> getItemById(Long itemId);
+    Item getItemById(Long itemId);
 
     Item updateItem(Long itemId, Item itemDetails);
 

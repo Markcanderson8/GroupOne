@@ -22,8 +22,12 @@ public class ItemServiceImpl implements ItemService{
     }
 
     @Override
-    public Optional<Item> getItemById(Long itemId) {
-        return itemRepository.findById(itemId);
+    public Item getItemById(Long itemId) {
+        Item item = itemRepository.findById(itemId).orElse(null);
+        if(item != null) {
+            return item;
+        }
+        return null;
     }
 
     @Override

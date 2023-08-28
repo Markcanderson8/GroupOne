@@ -11,7 +11,7 @@ public interface UserService {
 
     List<User> getAllUsers(User user);
 
-    Optional<User> getUserById(Long id);
+    User getUserById(Long id);
 
     User updateUser(Long id, User userDetails);
 
