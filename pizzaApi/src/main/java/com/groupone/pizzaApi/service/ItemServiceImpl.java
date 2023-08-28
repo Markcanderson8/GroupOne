@@ -1,6 +1,7 @@
 package com.groupone.pizzaApi.service;
 
 import com.groupone.pizzaApi.entity.Item;
+import com.groupone.pizzaApi.entity.User;
 import com.groupone.pizzaApi.exceptions.BadDataResponse;
 import com.groupone.pizzaApi.exceptions.ResourceNotFound;
 import com.groupone.pizzaApi.exceptions.ServiceUnavailable;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.ResourceAccessException;
 
 import javax.naming.ServiceUnavailableException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
