@@ -22,8 +22,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
 
-    @Autowired
-    private ItemService itemService;
+    ItemService itemService;
 
     @Override
     public User saveUser(User user) {

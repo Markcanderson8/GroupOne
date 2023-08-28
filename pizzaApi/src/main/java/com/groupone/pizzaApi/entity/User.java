@@ -25,6 +25,7 @@ public class User {
     private String email;
     @NotNull
     private String role;
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     List<Item> items = new ArrayList<>();
 
@@ -52,6 +53,14 @@ public class User {
         this.email = email;
         this.role = role;
         this.items = items;
+    }
+
+    public User(Long id, String firstName, String lastName, String phoneNumber, String email) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
     }
 
     public User(Long id) {
@@ -106,7 +115,6 @@ public class User {
         this.role = role;
     }
 
-    @JsonIgnore
     public List<Item> getItems() {
         return items;
     }
@@ -124,6 +132,7 @@ public class User {
                 Objects.isNull(email) &&
                 Objects.isNull(role);
     }
+
     @Override
     public String toString() {
         return "User{" +
