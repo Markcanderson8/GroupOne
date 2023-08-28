@@ -2,6 +2,9 @@ package com.groupone.pizzaApi.service;
 
 import com.groupone.pizzaApi.entity.Item;
 import com.groupone.pizzaApi.entity.User;
+import com.groupone.pizzaApi.exceptions.BadDataResponse;
+import com.groupone.pizzaApi.exceptions.ResourceNotFound;
+import com.groupone.pizzaApi.exceptions.ServiceUnavailable;
 import com.groupone.pizzaApi.repository.ItemRepository;
 import com.groupone.pizzaApi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,46 +27,66 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User saveUser(User user) {
-        user.setRole("user");
-        return userRepository.save(user);
+        try {
+            return userRepository.save(user);
+        } catch (Exception e) {
+            throw new ServiceUnavailable(e);
+        }
     }
 
     @Override
     public List<User> getAllUsers(User user) {
-        if(user.isEmpty()) {
-            return userRepository.findAll();
-        } else {
-            Example<User> UserExample = Example.of(user);
-            return userRepository.findAll(UserExample);
+        try {
+            if(user.isEmpty()) {
+                return userRepository.findAll();
+            } else {
+                Example<User> UserExample = Example.of(user);
+                return userRepository.findAll(UserExample);
+            }
+        } catch (Exception e) {
+            throw new ServiceUnavailable(e);
         }
     }
 
     @Override
     public User getUserById(Long id) {
-        User user = userRepository.findById(id).orElse(null);
-        if(user != null) {
-            return user;
+        try {
+            User user = userRepository.findById(id).orElse(null);
+            if (user != null) {
+                return user;
+            }
+        } catch (Exception e) {
+            throw new ServiceUnavailable(e);
         }
-        return null;
+        throw new ResourceNotFound("Could not locate a User with the id: " + id);
     }
 
     @Override
-    public User updateUser(Long id, User userDetails) {
-        Optional<User> user = userRepository.findById(id);
-
-        if(user.isPresent()) {
-            User existingUser = user.get();
-            existingUser.setFirstName(userDetails.getFirstName());
-            existingUser.setLastName(userDetails.getLastName());
-            existingUser.setEmail(userDetails.getEmail());
-            existingUser.setPhoneNumber(userDetails.getPhoneNumber());
-            return userRepository.save(existingUser);
+    public User updateUser(Long id, User user) {
+        if(!user.getId().equals(id)) {
+            throw new BadDataResponse("User Id must match the Id specified in the URL");
         }
-        return null;
+        try {
+            User  userFromDb = userRepository.findById(id).orElse(null);
+
+            if(userFromDb != null) {
+                return userRepository.save(user);
+            }
+        } catch (Exception e) {
+            throw new ServiceUnavailable(e);
+        }
+        throw new ResourceNotFound("Could not locate a User with the id: " + id);
     }
 
     @Override
     public void deleteUserById(Long id) {
-        userRepository.deleteById(id);
+        try {
+            if(userRepository.existsById(id)) {
+                userRepository.deleteById(id);
+            }
+        } catch (Exception e) {
+            throw new ServiceUnavailable(e);
+        }
+        throw new ResourceNotFound("Could not locate a User with the id: " + id);
     }
 }

@@ -33,7 +33,7 @@ public class ItemController {
     @GetMapping
     public ResponseEntity<List<Item>> getItemList(Item item) {
         logger.info(new Date() + LOGGER_POST_REQUEST_RECEIVED + item.toString());
-        return new ResponseEntity<>(itemService.fetchItemList(item), HttpStatus.OK);
+        return new ResponseEntity<>(itemService.getAllItems(item), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")

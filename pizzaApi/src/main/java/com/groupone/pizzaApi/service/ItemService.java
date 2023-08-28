@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface ItemService {
     Item saveItem(Item item);
 
-    List<Item> fetchItemList(Item item);
+    List<Item> getAllItems(Item item);
 
     Item getItemById(Long itemId);
 
