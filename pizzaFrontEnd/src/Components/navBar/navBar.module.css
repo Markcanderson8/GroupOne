@@ -1,0 +1,24 @@
+.navBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+}
+
+.logo {
+    width: 90px;
+}
+
+a {
+    font-size: 35px;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    padding: .25rem;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+a:hover {
+    background-color: gray;
+}
