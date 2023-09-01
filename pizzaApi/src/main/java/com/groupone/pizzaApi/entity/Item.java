@@ -24,12 +24,14 @@ public class Item implements Serializable {
     private String itemPrice;
     @Column(name = "item_size")
     private String itemSize;
-
+    @Column(name = "item_img")
+    private String itemImg;
     @JoinColumn(name = "user_id")
     @ManyToOne
     private User user;
 
     public Item() {}
+
     public Item(Long itemId, String itemName, String itemPrice, String itemSize) {
         this.itemId = itemId;
         this.itemName = itemName;
@@ -37,17 +39,19 @@ public class Item implements Serializable {
         this.itemSize = itemSize;
     }
 
-    public Item(String itemName, String itemPrice, String itemSize, User user) {
+    public Item(String itemName, String itemPrice, String itemSize, String itemImg, User user) {
         this.itemName = itemName;
         this.itemPrice = itemPrice;
         this.itemSize = itemSize;
+        this.itemImg = itemImg;
         this.user = user;
     }
 
-    public Item(String itemName, String itemPrice, String itemSize) {
+    public Item(String itemName, String itemPrice, String itemSize, String itemImg) {
         this.itemName = itemName;
         this.itemPrice = itemPrice;
         this.itemSize = itemSize;
+        this.itemImg = itemImg;
     }
 
     public Long getItemId() {
@@ -80,6 +84,14 @@ public class Item implements Serializable {
 
     public void setItemSize(String itemSize) {
         this.itemSize = itemSize;
+    }
+
+    public String getItemImg() {
+        return itemImg;
+    }
+
+    public void setItemImg(String itemImg) {
+        this.itemImg = itemImg;
     }
 
     public User getUser() {

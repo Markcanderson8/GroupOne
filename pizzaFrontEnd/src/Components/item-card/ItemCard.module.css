@@ -1,0 +1,31 @@
+.card .img {
+    width: 250px;
+    height: 300px;
+    border: 1px solid rgb(113, 94, 94);
+    border-radius: 10px;
+}
+
+.card {
+    border: 3px solid black;
+    width: 250px;
+    text-align: left;
+    padding: 1rem;
+    background-color: bisque;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+}
+
+.card-body {
+    padding-left: 1rem;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.heading {
+    text-align: center;
+}
