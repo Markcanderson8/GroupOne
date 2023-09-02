@@ -26,8 +26,9 @@ const ProductPage = () => {
       <h1>The Products Page</h1>
       <div className={styles.grid}>
         {Items.map((d, index) => (
-          <div>
+          <div key={index}>
             <ItemCard
+              itemId={d.itemId}
               itemImg={d.itemImg}
               itemName={d.itemName}
               itemSize={d.itemSize}

@@ -7,6 +7,7 @@
 
 .logo {
     width: 90px;
+    margin-top: 5px;
 }
 
 a {
@@ -19,6 +20,18 @@ a {
     border-radius: 10px;
 }
 
-a:hover {
-    background-color: lightgray;
+.logoLink :not(hover) {
+    background-color: transparent;
+}
+
+.loginLink:hover {
+    background-color: rgb(242, 235, 235);
+}
+
+.registerLink:hover {
+    background-color: rgb(242, 235, 235);
+}
+
+.productsLink:hover {
+    background-color: rgb(242, 235, 235);
 }

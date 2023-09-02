@@ -12,22 +12,30 @@
     text-align: center;
 }
 
-.sausage {
-    width: 20%;
-    margin: 2rem;
-}
-
 .cheese {
-    width: 30%;
-    margin: 2rem;
+    width: 600px;
 }
 
 .pepperoni {
-    width: 20%;
-    margin: 2rem;
+    width: 400px;
 }
 
 h1 {
     margin-top: 2rem;
 }
 
+.sausage {
+    width: 400px;
+}
+
+.sausageLink :not(hover) {
+    background-color: transparent;
+}
+
+.pepperoniLink :not(hover) {
+    background-color: transparent;
+}
+
+.cheeseLink :not(hover) {
+    background-color: transparent;
+}

@@ -6,6 +6,7 @@ import Home from "../home/Home";
 import styles from "./App.module.css";
 import ItemCard from "../item-card/ItemCard";
 import ProductPage from "./productPage/ProductPage";
+import SingleItemPage from "../single-item-page/SingleItemPage";
 
 function App() {
   let itemName = "Cheese";
@@ -27,6 +28,7 @@ function App() {
             />
           }
         />
+        <Route exact path="/products/:id" element={<SingleItemPage />} />
         <Route exact path="/products" element={<ProductPage />} />
       </Routes>
       <Footer />
