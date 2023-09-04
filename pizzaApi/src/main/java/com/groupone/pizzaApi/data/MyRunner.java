@@ -72,7 +72,7 @@ public class MyRunner implements CommandLineRunner {
         item6 = new Item("Vegan", "8.99", "12\"", veganImg);
         item7 = new Item("Dr. Pepper", "2.99", "2L", drPepperImg);
         item8 = new Item("Sprite", "2.99", "2L", spriteImg);
-        item9 = new Item("fanta", "2.99", "2L", fantaImg,user1);
+        item9 = new Item("Fanta", "2.99", "2L", fantaImg,user1);
         item10 = new Item("Coke", "2.99", "2L", cokeImg,user2);
         itemRepository.save(item1);
         itemRepository.save(item2);
