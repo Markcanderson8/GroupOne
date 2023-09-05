@@ -27,7 +27,7 @@ const LoginSignup = () => {
         },
       });
       let resJson = await res.json();
-      if (res.json === 200) {
+      if (res.json === 201) {
         setFirstName("");
         setLastName("");
         setPhoneNumber("");

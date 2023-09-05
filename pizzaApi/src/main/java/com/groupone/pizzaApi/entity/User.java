@@ -25,18 +25,22 @@ public class User {
     private String email;
     @NotNull
     private String role;
+
+    @NotNull
+    private String password;
     @JsonIgnore
     @OneToMany(mappedBy = "user")
     List<Item> items = new ArrayList<>();
 
     public User() {}
 
-    public User(String firstName, String lastName, String phoneNumber, String email, String role) {
+    public User(String firstName, String lastName, String phoneNumber, String email, String role, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.role = role;
+        this.password = password;
     }
 
     public User(String firstName, String lastName, String phoneNumber, String email) {
@@ -115,6 +119,14 @@ public class User {
         this.role = role;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public List<Item> getItems() {
         return items;
     }
@@ -130,7 +142,8 @@ public class User {
                 Objects.isNull(lastName) &&
                 Objects.isNull(phoneNumber) &&
                 Objects.isNull(email) &&
-                Objects.isNull(role);
+                Objects.isNull(role) &&
+                Objects.isNull(password);
     }
 
     @Override
@@ -142,6 +155,7 @@ public class User {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
                 ", role='" + role + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 }
