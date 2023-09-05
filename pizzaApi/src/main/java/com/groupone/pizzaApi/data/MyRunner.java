@@ -87,9 +87,9 @@ public class MyRunner implements CommandLineRunner {
     }
 
     private void loadUsers() {
-        user1 = new User("mark", "anderson", "864-637-9485", "mark@gmail.com", "admin");
-        user2 = new User("chance", "anderson", "864-555-2354", "chance@gmail.com", "user");
-        user3 = new User("maddy", "anderson", "864-952-9902", "maddy@gmail.com", "user");
+        user1 = new User("mark", "anderson", "864-637-9485", "mark@gmail.com", "admin", "pass123");
+        user2 = new User("maddy", "anderson", "864-555-2354", "chance@gmail.com", "user", "maddy123");
+        user3 = new User("chance",  "anderson", "864-952-9902", "maddy@gmail.com", "user", "chance323");
         userRepository.save(user1);
         userRepository.save(user2);
         userRepository.save(user3);

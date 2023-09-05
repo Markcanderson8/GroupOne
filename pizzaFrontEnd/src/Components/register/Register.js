@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./loginSignup.module.css";
+import styles from "./register.module.css";
 import constants, { USERS_ENDPOINT } from "../util/constants";
 
 const LoginSignup = () => {
@@ -26,8 +26,8 @@ const LoginSignup = () => {
           "Content-type": "application/json; charset=UTF-8",
         },
       });
-      let resJson = await res.json();
-      if (res.json === 201) {
+      // let resJson = await res.json();
+      if (res.status === 201) {
         setFirstName("");
         setLastName("");
         setPhoneNumber("");
@@ -96,8 +96,9 @@ const LoginSignup = () => {
             Register
           </button>
         </div>
-
-        <div className="message">{message ? <p>{message}</p> : null}</div>
+        <div className={styles.message}>
+          {message ? <p>{message}</p> : null}
+        </div>
       </form>
     </div>
   );

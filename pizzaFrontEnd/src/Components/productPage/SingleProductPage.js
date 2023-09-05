@@ -32,7 +32,7 @@ const SingleProductPage = () => {
               <h1>{filteredProduct.itemName}</h1>
             </div>
             <div>
-              <div key={filteredProduct.id}>
+              <div key={filteredProduct.itemId}>
                 <ItemCard product={filteredProduct} />
               </div>
             </div>

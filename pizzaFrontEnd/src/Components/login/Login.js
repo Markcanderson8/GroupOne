@@ -1,13 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import styles from "./login.module.css";
+import constants from "../util/constants";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [users, setUsers] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = () => {};
+  const fetchUsers = () => {
+    fetch(constants.BASE_URL_API + constants.USERS_ENDPOINT)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setUsers(data);
+        console.log(data);
+      });
+  };
+
+  useEffect(() => {
+    fetchUsers();
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <div className={styles.container}>

@@ -59,14 +59,6 @@ public class User {
         this.items = items;
     }
 
-    public User(Long id, String firstName, String lastName, String phoneNumber, String email) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-    }
-
     public User(Long id) {
         this.id = id;
     }
