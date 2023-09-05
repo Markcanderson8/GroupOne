@@ -1,8 +1,8 @@
 import React from "react";
-import constants from "../../util/constants";
+import constants from "../util/constants";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import ItemCard from "../../item-card/ItemCard";
+import ItemCard from "../item-card/ItemCard";
 
 const SingleProductPage = () => {
   const [products, setProducts] = useState([]);

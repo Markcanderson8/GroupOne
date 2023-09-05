@@ -16,10 +16,10 @@ function NavBar() {
         Products
       </Link>
       <h1>The Pizza Shack</h1>
-      <Link className={styles.navLinks} to="/signup">
+      <Link className={styles.navLinks} to="/register">
         Register
       </Link>
-      <Link className={styles.navLinks} to="/signup">
+      <Link className={styles.navLinks} to="/">
         Login
       </Link>
     </div>

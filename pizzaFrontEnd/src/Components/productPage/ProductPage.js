@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import constants from "../../util/constants";
-import ItemCard from "../../item-card/ItemCard";
+import constants from "../util/constants";
+import ItemCard from "../item-card/ItemCard";
 import styles from "./productPage.module.css";
 import { Link } from "react-router-dom";
 

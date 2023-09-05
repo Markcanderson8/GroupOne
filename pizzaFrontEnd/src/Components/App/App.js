@@ -4,9 +4,9 @@ import Footer from "../footer/Footer";
 import { Routes, Route } from "react-router-dom";
 import Home from "../home/Home";
 import styles from "./App.module.css";
-import ProductPage from "./productPage/ProductPage";
-import SingleProductPage from "./productPage/SingleProductPage";
-import LoginSignup from "./loginSignup/LoginSignup";
+import ProductPage from "../productPage/ProductPage";
+import SingleProductPage from "../productPage/SingleProductPage";
+import Register from "../register/Register";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route exact path="/products" element={<ProductPage />} />
         <Route exact path="/products/:id" element={<SingleProductPage />} />
-        <Route exact path="/signup" element={<LoginSignup />} />
+        <Route exact path="/register" element={<Register />} />
       </Routes>
       <Footer />
     </div>

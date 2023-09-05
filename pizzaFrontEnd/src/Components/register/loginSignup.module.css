@@ -78,6 +78,8 @@
 
 .submitContainer {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 30px;
     margin: 60px auto;
 }
@@ -99,4 +101,25 @@
 .gray {
     background-color: #EAEAEA;
     color: darkgray;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 59px;
+    color: black;
+    background-color: rgb(214, 210, 210);
+    border-radius: 50px;
+    border: none;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.message {
+    font-size: 1.2em;
+    text-align: center;
+    color: #36a936;
 }
