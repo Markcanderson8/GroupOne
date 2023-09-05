@@ -19,7 +19,7 @@ function NavBar() {
       <Link className={styles.navLinks} to="/register">
         Register
       </Link>
-      <Link className={styles.navLinks} to="/">
+      <Link className={styles.navLinks} to="/login">
         Login
       </Link>
     </div>
