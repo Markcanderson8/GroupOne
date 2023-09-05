@@ -3,12 +3,6 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
-.card {
-    border: 3px solid black;
-    width: 250px;
-    text-align: left;
-    padding: 1rem;
-    background-color: bisque;
-    border-radius: 15px;
-    margin-bottom: 2rem;
+.cardFont {
+    font-size: 15px;
 }

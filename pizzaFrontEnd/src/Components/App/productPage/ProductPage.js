@@ -28,7 +28,7 @@ const ProductPage = () => {
       <div className={styles.grid}>
         {Items.map((d, index) => (
           <Link to={`/products/${d.itemId}`}>
-            <div key={index}>
+            <div key={index} className={styles.cardFont}>
               <ItemCard product={d} />
             </div>
           </Link>
