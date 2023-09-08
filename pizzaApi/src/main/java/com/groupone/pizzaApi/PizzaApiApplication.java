@@ -29,7 +29,8 @@ public class PizzaApiApplication {
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")
 						.allowedMethods("GET", "POST")
-						.allowedOrigins("*");
+						.allowCredentials(true)
+						.allowedOriginPatterns("*");
 			}
 		};
 	}

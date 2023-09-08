@@ -26,6 +26,7 @@ const LoginSignup = () => {
           "Content-type": "application/json; charset=UTF-8",
         },
       });
+      console.log(res);
       // let resJson = await res.json();
       if (res.status === 201) {
         setFirstName("");
@@ -34,6 +35,7 @@ const LoginSignup = () => {
         setEmail("");
         setPassword("");
         setMessage("User Created Successfully!!!");
+        console.log(res.json.acce);
       } else {
         setMessage("Some error occured");
       }
