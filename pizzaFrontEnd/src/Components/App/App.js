@@ -2,7 +2,7 @@ import "./App.module.css";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import { Routes, Route } from "react-router-dom";
-import Home from "../home/Home";
+import Home from "../home/Home"
 import styles from "./App.module.css";
 import ItemCard from "../item-card/ItemCard";
 import ProductPage from "./productPage/ProductPage";
@@ -15,7 +15,7 @@ function App() {
     <div className={styles.App}>
       <Header />
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<Home/>} />
         <Route
           exact
           path="/card"

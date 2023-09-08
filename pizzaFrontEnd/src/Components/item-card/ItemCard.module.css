@@ -1,31 +1,65 @@
-.card .img {
-    width: 250px;
-    height: 300px;
-    border: 1px solid rgb(113, 94, 94);
-    border-radius: 10px;
-}
-
-.card {
-    border: 3px solid black;
-    width: 250px;
-    text-align: left;
-    padding: 1rem;
-    background-color: bisque;
-    border-radius: 15px;
-    margin-bottom: 2rem;
-}
-
-.card-body {
-    padding-left: 1rem;
-}
-
 .item {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
-}
-
-.heading {
-    text-align: center;
-}
+    margin: 2rem 0;
+  }
+  
+  /* Card styles */
+  .card {
+    width: 100%;
+    max-width: 300px; /* Adjust the maximum width as needed */
+    border: 1px solid rgb(113, 94, 94); /* Border color */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    background-color: bisque; /* Card background color */
+  }
+  
+  /* Hover effect on the card */
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Link styles */
+  .link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+  }
+  
+  /* Image styles */
+  .img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Card body styles */
+  .cardBody {
+    padding: 1rem;
+  }
+  
+  /* Heading styles */
+  .heading {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  /* Description styles */
+  .cardBody p {
+    margin: 0;
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 768px) {
+    .item {
+      margin: 1rem 0;
+    }
+  
+    .card {
+      max-width: 100%; /* Full width on smaller screens */
+    }
+  }

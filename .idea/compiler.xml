@@ -10,9 +10,6 @@
         <module name="pizzaApi" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="pizzaApi" target="20" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

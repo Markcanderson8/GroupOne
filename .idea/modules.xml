@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/GroupOne.iml" filepath="$PROJECT_DIR$/.idea/GroupOne.iml" />
-      <module fileurl="file://$PROJECT_DIR$/pizzaApi/pizzaApi.iml" filepath="$PROJECT_DIR$/pizzaApi/pizzaApi.iml" />
     </modules>
   </component>
 </project>
