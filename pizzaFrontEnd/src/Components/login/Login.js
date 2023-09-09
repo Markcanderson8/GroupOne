@@ -8,13 +8,16 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  //const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     for (var i = 0; i < users.length; i++) {
       if (users[i].email === email && users[i].password === password) {
-        navigate("/");
+        setIsLoggedIn(true);
+        navigate("/", { loggedIn: isLoggedIn });
       } else {
         setError(true);
         console.log("error");

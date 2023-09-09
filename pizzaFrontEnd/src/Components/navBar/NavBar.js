@@ -11,7 +11,6 @@ function NavBar() {
           <img src={logo} alt="pizza logo" className={styles.logo} />
         </Link>
       </div>
-
       <Link className={styles.navLinks} to="/products">
         Products
       </Link>
