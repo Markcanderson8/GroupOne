@@ -72,7 +72,7 @@ public class MyRunner implements CommandLineRunner {
         item6 = new Item("Vegan", "8.99", "12\"", veganImg);
         item7 = new Item("Dr. Pepper", "2.99", "2L", drPepperImg);
         item8 = new Item("Sprite", "2.99", "2L", spriteImg);
-        item9 = new Item("fanta", "2.99", "2L", fantaImg,user1);
+        item9 = new Item("Fanta", "2.99", "2L", fantaImg,user1);
         item10 = new Item("Coke", "2.99", "2L", cokeImg,user2);
         itemRepository.save(item1);
         itemRepository.save(item2);
@@ -87,9 +87,9 @@ public class MyRunner implements CommandLineRunner {
     }
 
     private void loadUsers() {
-        user1 = new User("mark", "anderson", "864-637-9485", "mark@gmail.com", "admin");
-        user2 = new User("chance", "anderson", "864-555-2354", "chance@gmail.com", "user");
-        user3 = new User("maddy", "anderson", "864-952-9902", "maddy@gmail.com", "user");
+        user1 = new User("mark", "anderson", "864-637-9485", "mark@gmail.com", "admin", "pass123");
+        user2 = new User("maddy", "anderson", "864-555-2354", "chance@gmail.com", "user", "maddy123");
+        user3 = new User("chance",  "anderson", "864-952-9902", "maddy@gmail.com", "user", "chance323");
         userRepository.save(user1);
         userRepository.save(user2);
         userRepository.save(user3);

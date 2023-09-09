@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./ItemCard.module.css";
 
-const ItemCard = (props) => {
+const ItemCard = ({ product }) => {
   return (
     <div className={styles.item}>
       <div className={styles.card}>

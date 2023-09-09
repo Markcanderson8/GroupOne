@@ -6,7 +6,7 @@
 }
 
 .logo {
-    width: 90px;
+    width: 80px;
 }
 
 a {
@@ -19,6 +19,14 @@ a {
     border-radius: 10px;
 }
 
-a:hover {
-    background-color: lightgray;
+.logoLink {
+    background-color: transparent;
+}
+
+.navLinks:hover {
+    background-color: rgb(234, 234, 234);
+}
+
+.alignLogoCenter {
+    margin-top: 5px;
 }
