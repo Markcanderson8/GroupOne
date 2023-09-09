@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./addItem.module.css";
 import constants, { ITEMS_ENDPOINT } from "../util/constants";
+import { useNavigate } from "react-router-dom";
 
 const LoginSignup = () => {
   const [itemName, setItemName] = useState("");
@@ -8,6 +9,11 @@ const LoginSignup = () => {
   const [itemSize, setItemSize] = useState("");
   const [itemImg, setItemImg] = useState("");
   const [message, setMessage] = useState("");
+  const [error, setError] = useState(false);
+
+  const navigate = useNavigate();
+
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
   let handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,8 +38,11 @@ const LoginSignup = () => {
         setItemSize("");
         setItemImg("");
         setMessage("Item Created Successfully!!!");
+        await sleep(2000);
         console.log(res.json.acce);
+        navigate("/products");
       } else {
+        setError(true);
         setMessage("Some error occured");
       }
     } catch (err) {
@@ -55,6 +64,7 @@ const LoginSignup = () => {
               value={itemName}
               placeholder="Name"
               onChange={(e) => setItemName(e.target.value)}
+              required
             />
           </div>
           <div className={styles.input}>
@@ -63,6 +73,7 @@ const LoginSignup = () => {
               value={itemPrice}
               placeholder="Price"
               onChange={(e) => setItemPrice(e.target.value)}
+              required
             />
           </div>
           <div className={styles.input}>
@@ -71,6 +82,7 @@ const LoginSignup = () => {
               value={itemSize}
               placeholder="Size"
               onChange={(e) => setItemSize(e.target.value)}
+              required
             />
           </div>
           <div className={styles.input}>
@@ -79,6 +91,7 @@ const LoginSignup = () => {
               value={itemImg}
               placeholder="Image"
               onChange={(e) => setItemImg(e.target.value)}
+              required
             />
           </div>
         </div>
@@ -87,7 +100,7 @@ const LoginSignup = () => {
             Submit
           </button>
         </div>
-        <div className={styles.message}>
+        <div className={error ? styles.errMsg : styles.message}>
           {message ? <p>{message}</p> : null}
         </div>
       </form>

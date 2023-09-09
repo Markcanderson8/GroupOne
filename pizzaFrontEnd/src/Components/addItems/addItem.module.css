@@ -123,3 +123,9 @@
     text-align: center;
     color: #36a936;
 }
+
+.errMsg {
+    font-size: 1.2em;
+    text-align: center;
+    color: red;
+}
