@@ -12,6 +12,8 @@ const LoginSignup = () => {
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
   let handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -36,7 +38,10 @@ const LoginSignup = () => {
         setPhoneNumber("");
         setEmail("");
         setPassword("");
-        setMessage("User Created Successfully!!!");
+        setMessage(
+          "User Created Successfully!!! Please wait to be redirected to login"
+        );
+        await sleep(5000);
         navigate("/login");
         console.log(res.json.acce);
       } else {

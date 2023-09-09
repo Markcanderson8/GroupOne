@@ -13,6 +13,12 @@ const NotRegisteredPage = () => {
         </Link>
         to Register
       </p>
+      <p>
+        Already a Member
+        <Link to="/login" className={styles.click}>
+          Click Here
+        </Link>
+      </p>
     </div>
   );
 };
