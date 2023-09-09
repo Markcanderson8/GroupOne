@@ -15,7 +15,7 @@ export const useAppContext = () => {
 
 export const AppContextProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [role, setRole] = useState("user");
+  const [role, setRole] = useState("");
 
   return (
     <AppContext.Provider value={{ isLoggedIn, setIsLoggedIn, role, setRole }}>

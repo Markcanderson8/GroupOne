@@ -11,7 +11,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const { isLoggedIn, setIsLoggedIn } = useAppContext();
-  const { role, setRole } = useAppContext();
+  const { setRole } = useAppContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,11 +19,10 @@ const Login = () => {
       if (users[i].email === email && users[i].password === password) {
         setIsLoggedIn(!isLoggedIn);
         if (users[i].role === "admin") {
-          setRole(!role);
-          console.log(users[i]);
-          navigate("/addItems");
+          setRole(users[i].role);
+          navigate("/products");
         } else if (users[i].role === "user") {
-          setRole(role);
+          setRole(users[i].role);
           navigate("/products");
         }
         setEmail("");

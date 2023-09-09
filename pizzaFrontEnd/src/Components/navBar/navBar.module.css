@@ -30,3 +30,11 @@ a {
 .alignLogoCenter {
     margin-top: 5px;
 }
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
