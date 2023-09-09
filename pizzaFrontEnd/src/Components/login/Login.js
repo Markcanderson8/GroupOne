@@ -14,11 +14,12 @@ const Login = () => {
     e.preventDefault();
     for (var i = 0; i < users.length; i++) {
       if (users[i].email === email && users[i].password === password) {
+        setError(false);
         navigate("/");
-      } else {
-        setError(true);
-        console.log("error");
       }
+    }
+    if (error) {
+      console.log("error");
     }
   };
   const getApiData = async () => {
