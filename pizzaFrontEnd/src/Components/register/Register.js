@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./register.module.css";
 import constants, { USERS_ENDPOINT } from "../util/constants";
+import { useNavigate } from "react-router-dom";
 
 const LoginSignup = () => {
   const [firstName, setFirstName] = useState("");
@@ -9,6 +10,7 @@ const LoginSignup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   let handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,6 +37,7 @@ const LoginSignup = () => {
         setEmail("");
         setPassword("");
         setMessage("User Created Successfully!!!");
+        navigate("/login");
         console.log(res.json.acce);
       } else {
         setMessage("Some error occured");

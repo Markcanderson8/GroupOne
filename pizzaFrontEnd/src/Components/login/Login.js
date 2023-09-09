@@ -2,22 +2,36 @@ import React, { useState, useEffect } from "react";
 import styles from "./login.module.css";
 import constants from "../util/constants";
 import { useNavigate } from "react-router-dom";
+import { useAppContext } from "../../context/AuthProvider";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [users, setUsers] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
-  const navigate = useNavigate();
+  const { isLoggedIn, setIsLoggedIn } = useAppContext();
+  const { role, setRole } = useAppContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     for (var i = 0; i < users.length; i++) {
       if (users[i].email === email && users[i].password === password) {
+        setIsLoggedIn(!isLoggedIn);
+        if (users[i].role === "admin") {
+          setRole(!role);
+          console.log(users[i]);
+          navigate("/addItems");
+        } else if (users[i].role === "user") {
+          setRole(role);
+          navigate("/products");
+        }
+        setEmail("");
+        setPassword("");
         setError(false);
-        navigate("/");
       }
     }
+    setError(true);
     if (error) {
       console.log("error");
     }
@@ -58,6 +72,7 @@ const Login = () => {
                 value={password}
                 placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}
+                required
               />
             </div>
           </div>

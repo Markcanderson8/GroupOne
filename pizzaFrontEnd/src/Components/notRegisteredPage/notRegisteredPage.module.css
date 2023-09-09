@@ -1,0 +1,10 @@
+.header {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+.click {
+    font-size: 20px;
+    color: bisque;
+    text-shadow: 2px 2px 3px black;
+}

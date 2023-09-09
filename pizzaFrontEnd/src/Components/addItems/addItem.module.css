@@ -1,5 +1,5 @@
 .container {
-    height: 65vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -122,16 +122,4 @@
     font-size: 1.2em;
     text-align: center;
     color: #36a936;
-}
-
-.error {
-    font-size: 1.2em;
-    text-align: center;
-    color: red;
-}
-
-.success {
-    font-size: 1.2em;
-    text-align: center;
-    color: rgb(0, 255, 0);
 }

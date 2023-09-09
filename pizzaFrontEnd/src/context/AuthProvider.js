@@ -1,15 +1,29 @@
-import { createContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
+import Proptypes from "prop-types";
 
-const AuthContext = createContext({});
+const AppContext = createContext();
 
-export const AuthProvider = ({ children }) => {
-  const [auth, setAuth] = useState({});
+export const useAppContext = () => {
+  const context = useContext(AppContext);
+
+  if (!context) {
+    throw Error("useAppContext must be used in AppContextProvider");
+  }
+
+  return context;
+};
+
+export const AppContextProvider = ({ children }) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [role, setRole] = useState("user");
 
   return (
-    <AuthContext.Provider value={{ auth, setAuth }}>
+    <AppContext.Provider value={{ isLoggedIn, setIsLoggedIn, role, setRole }}>
       {children}
-    </AuthContext.Provider>
+    </AppContext.Provider>
   );
 };
 
-export default AuthContext;
+AppContextProvider.propTypes = {
+  children: Proptypes.node.isRequired,
+};
