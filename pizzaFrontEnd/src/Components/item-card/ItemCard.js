@@ -14,7 +14,6 @@ const ItemCard = ({ product }) => {
         </Link>
         <div className={styles.cardBody}>
           <h2 className={styles.heading}>{product.itemName}</h2>
-          <p>{product.itemName} Pizza</p>
           <p>Size: {product.itemSize}</p>
           <p>Price: ${product.itemPrice}</p>
         </div>
