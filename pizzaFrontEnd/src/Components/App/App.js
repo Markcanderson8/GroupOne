@@ -11,6 +11,7 @@ import Login from "../login/Login";
 import AddItemsForm from "../addItems/AddItemsForm";
 import ProtectedRoutes from "../authorization/ProtectedRoutes";
 import { useAppContext } from "../../context/AuthProvider";
+import Cart from "../cartPage/Cart";
 
 function App() {
   const { isLoggedIn } = useAppContext();
@@ -27,6 +28,7 @@ function App() {
         >
           <Route exact path="/products" element={<ProductPage />} />
           <Route exact path="/products/:id" element={<SingleProductPage />} />
+          <Route exact path="/cart/:id" element={<Cart />} />
         </Route>
         <Route
           element={<ProtectedRoutes isLoggedIn={isLoggedIn} role={!role} />}

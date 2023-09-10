@@ -68,3 +68,18 @@
       max-width: 100%; /* Full width on smaller screens */
     }
   }
+
+  .cartButton {
+    margin-bottom: 1rem;
+  }
+
+  .cart {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: bisque;
+    border: 1px solid black;
+  }
+
+  .cart:hover {
+    background-color: rgb(238, 230, 219);
+  }
