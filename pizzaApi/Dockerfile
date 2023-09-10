@@ -1,6 +1,6 @@
 FROM openjdk:20-ea-4-jdk AS build
 COPY . .
-RUN mvn clean install
+
 RUN mvn clean package
 
 FROM openjdk:20-jdk-slim
