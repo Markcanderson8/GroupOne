@@ -1,7 +1,8 @@
 FROM openjdk:20-ea-4-jdk AS build
 COPY . .
 
-RUN sudo mvn clean package
+RUN mvn install
+RUN mvn clean package
 
 FROM openjdk:20-jdk-slim
 COPY --from=build /target/pizzaApi-0.0.1-SNAPSHOT.jar pizzaApi.jar
