@@ -1,6 +1,6 @@
 FROM openjdk:20-ea-4-jdk AS build
 COPY . .
-#RUN dos2unix mvnw
+RUN dos2unix mvnw
 RUN mvnw clean package
 
 FROM openjdk:20-jdk-slim
