@@ -8,3 +8,7 @@
     color: bisque;
     text-shadow: 2px 2px 3px black;
 }
+
+.position {
+    height: 50vh;
+}

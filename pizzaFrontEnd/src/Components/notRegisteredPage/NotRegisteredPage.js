@@ -3,7 +3,7 @@ import styles from "./notRegisteredPage.module.css";
 import { Link } from "react-router-dom";
 const NotRegisteredPage = () => {
   return (
-    <div>
+    <div className={styles.position}>
       <h1 className={styles.header}>
         Not Registered...Must Register to order!
       </h1>
