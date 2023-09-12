@@ -8,7 +8,7 @@ const ProductPage = () => {
   const [Items, setItems] = useState([]);
 
   const fetchItems = () => {
-    fetch(constants.BASE_URL_API + constants.ITEMS_ENDPOINT)
+    fetch(constants.BASE_URL_API + constants.ITEMS_ENDPOINT) // "http://localhost:8080" + "/items" = http://localhost:8080/items
       .then((response) => {
         return response.json();
       })
