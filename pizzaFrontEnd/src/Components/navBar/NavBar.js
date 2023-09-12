@@ -17,12 +17,16 @@ function NavBar() {
       <Link className={styles.navLinks} to="/products">
         Products
       </Link>
+      <Link>About Us</Link>
       <h1>The Pizza Shack</h1>
       <Link
         className={isLoggedIn ? styles.hidden : styles.navLinks}
         to="/register"
       >
         Register
+      </Link>
+      <Link className={styles.navLinks} to="/contact-us">
+        Contact Us
       </Link>
       <Link
         to="/addItems"
