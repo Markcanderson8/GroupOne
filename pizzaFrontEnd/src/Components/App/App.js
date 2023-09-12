@@ -14,6 +14,7 @@ import { useAppContext } from "../../context/AuthProvider";
 import Cart from "../cartPage/Cart";
 import Contact from "../contactPage/Contact";
 import MessageSent from "../messageSentPage/MessageSent";
+import AdminPage from "../adminPage/AdminPage";
 
 function App() {
   const { isLoggedIn } = useAppContext();
@@ -37,7 +38,8 @@ function App() {
         <Route
           element={<ProtectedRoutes isLoggedIn={isLoggedIn} role={!role} />}
         >
-          <Route exact path="/addItems" element={<AddItemsForm />} />
+          <Route exact path="/adminPage" element={<AdminPage />} />
+          <Route exact path="/adminPage/addItems" element={<AddItemsForm />} />
         </Route>
       </Routes>
       <Footer />

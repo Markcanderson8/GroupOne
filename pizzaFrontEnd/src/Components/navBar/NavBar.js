@@ -29,10 +29,10 @@ function NavBar() {
         Contact Us
       </Link>
       <Link
-        to="/addItems"
+        to="/adminPage"
         className={isLoggedIn && role === "admin" ? styles.show : styles.hidden}
       >
-        Add Items
+        Admin Page
       </Link>
       {isLoggedIn ? (
         <Link
