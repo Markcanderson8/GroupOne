@@ -20,7 +20,9 @@ function NavBar() {
       <Link>About Us</Link>
       <h1>The Pizza Shack</h1>
       <Link
-        className={isLoggedIn ? styles.hidden : styles.navLinks}
+        className={
+          isLoggedIn && role === "admin" ? styles.hidden : styles.navLinks
+        }
         to="/register"
       >
         Register
