@@ -17,8 +17,10 @@ function NavBar() {
       <Link className={styles.navLinks} to="/products">
         Products
       </Link>
-      <Link>About Us</Link>
-      <h1>The Pizza Shack</h1>
+      <Link className={styles.navLinks} to="/">
+        About Us
+      </Link>
+      <h1 className={styles.heading}>The Pizza Shack</h1>
       <Link
         className={
           isLoggedIn && role === "admin" ? styles.hidden : styles.navLinks
@@ -32,7 +34,11 @@ function NavBar() {
       </Link>
       <Link
         to="/adminPage"
-        className={isLoggedIn && role === "admin" ? styles.show : styles.hidden}
+        className={
+          isLoggedIn && role === "admin"
+            ? styles.show && styles.navLinks
+            : styles.hidden
+        }
       >
         Admin Page
       </Link>
