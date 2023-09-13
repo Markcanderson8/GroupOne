@@ -33,7 +33,7 @@ function App() {
         >
           <Route exact path="/products" element={<ProductPage />} />
           <Route exact path="/products/:id" element={<SingleProductPage />} />
-          <Route exact path="/cart/:id" element={<Cart />} />
+          <Route exact path="/cart" element={<Cart />} />
         </Route>
         <Route
           element={<ProtectedRoutes isLoggedIn={isLoggedIn} role={!role} />}
