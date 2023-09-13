@@ -1,11 +1,10 @@
 import React from "react";
 import styles from "./navBar.module.css";
 import logo from "../../images/pizza-logo.avif";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAppContext } from "../../context/AuthProvider";
 
 function NavBar() {
-  const navigate = useNavigate();
   const { isLoggedIn, setIsLoggedIn } = useAppContext();
   const { role } = useAppContext();
   return (
