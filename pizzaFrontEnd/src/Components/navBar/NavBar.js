@@ -1,10 +1,11 @@
 import React from "react";
 import styles from "./navBar.module.css";
 import logo from "../../images/pizza-logo.avif";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAppContext } from "../../context/AuthProvider";
 
 function NavBar() {
+  const navigate = useNavigate();
   const { isLoggedIn, setIsLoggedIn } = useAppContext();
   const { role } = useAppContext();
   return (
@@ -25,7 +26,7 @@ function NavBar() {
         className={
           isLoggedIn && role === "admin" ? styles.hidden : styles.navLinks
         }
-        to="/register"
+        to={isLoggedIn && role !== "admin" ? "/" : "/register"}
       >
         Register
       </Link>
