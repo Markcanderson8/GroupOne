@@ -1,5 +1,5 @@
 .pageContainer {
-    max-width: 1200px; /* Set a maximum width for the page content */
+    max-width: 1300px; /* Set a maximum width for the page content */
     margin: 0 auto; /* Center align the content */
     /* padding: 2rem; Add some padding to the content */
   }
@@ -14,7 +14,7 @@
   /* Grid styles */
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Responsive grid with a minimum item width of 250px */
-    gap: 50px; /* Add some spacing between grid items */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid with a minimum item width of 250px */
+    gap: 10px; /* Add some spacing between grid items */
     justify-items: center; /* Center align grid items horizontally */
   }
