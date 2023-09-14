@@ -16,6 +16,7 @@ import Contact from "../contactPage/Contact";
 import MessageSent from "../messageSentPage/MessageSent";
 import AdminPage from "../adminPage/AdminPage";
 import PageNotFound from "../pageNotFound/PageNotFound";
+import AboutPage from "../aboutPage/AboutPage";
 
 function App() {
   const { isLoggedIn } = useAppContext();
@@ -29,7 +30,7 @@ function App() {
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/contact-us" element={<Contact />} />
         <Route exact path="/message-sent" element={<MessageSent />} />
-        <Route exact path="/about-us" element={<AboutPage/>} />
+        <Route exact path="/about-us" element={<AboutPage />} />
         <Route
           element={<ProtectedRoutes isLoggedIn={isLoggedIn} role={role} />}
         >
