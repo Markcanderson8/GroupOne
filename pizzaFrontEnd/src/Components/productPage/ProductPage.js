@@ -23,7 +23,7 @@ const ProductPage = () => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.pageContainer}>
       <div className={styles.grid}>
         {Items.map((d, index) => (
           <Link to={`/products/${d.itemId}`}>
