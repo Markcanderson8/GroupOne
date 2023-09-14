@@ -29,6 +29,7 @@ function App() {
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/contact-us" element={<Contact />} />
         <Route exact path="/message-sent" element={<MessageSent />} />
+        <Route exact path="/about-us" element={<AboutPage/>} />
         <Route
           element={<ProtectedRoutes isLoggedIn={isLoggedIn} role={role} />}
         >

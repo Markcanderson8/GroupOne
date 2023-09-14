@@ -17,9 +17,7 @@ function NavBar() {
       <Link className={styles.navLinks} to="/products">
         Products
       </Link>
-      <Link className={styles.navLinks} to="/">
-        About Us
-      </Link>
+      <Link className={styles.navLinks} to="/about-us">About Us</Link>
       <h1 className={styles.heading}>The Pizza Shack</h1>
       <Link
         className={
