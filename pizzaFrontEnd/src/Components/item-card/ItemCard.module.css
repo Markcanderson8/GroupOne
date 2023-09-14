@@ -48,14 +48,14 @@
   
   /* Heading styles */
   .heading {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 0;
   }
   
   /* Description styles */
   .cardBody p {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   
   /* Media queries for responsiveness */
