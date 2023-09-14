@@ -18,7 +18,7 @@ const ItemCard = ({ product }) => {
           <p>Price: ${product.itemPrice}</p>
         </div>
         <div className={styles.cartButton}>
-          <Link className={styles.cart} to={`/cart/${product.itemId}`}>
+          <Link className={styles.cart} to="/cart">
             Add to Cart
           </Link>
         </div>

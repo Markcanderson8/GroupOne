@@ -13,10 +13,10 @@ a {
     font-size: 35px;
     text-decoration: none;
     color: black;
-    background-color: white;
+    background-color: transparent;
     padding: .35rem;
     border: none;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
 .logoLink {
@@ -24,7 +24,7 @@ a {
 }
 
 .navLinks:hover {
-    background-color: rgb(234, 234, 234);
+    /* background-color: bisque; */
 }
 
 .alignLogoCenter {
@@ -37,4 +37,8 @@ a {
 
 .show {
     display: block;
+}
+
+.heading {
+    margin-bottom: 2rem;
 }

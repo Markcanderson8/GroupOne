@@ -8,7 +8,7 @@
   /* Card styles */
   .card {
     width: 100%;
-    max-width: 300px; /* Adjust the maximum width as needed */
+    max-width: 350px; /* Adjust the maximum width as needed */
     border: 1px solid rgb(113, 94, 94); /* Border color */
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
