@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 95%;
+    width: 90%;
 }
 
 .logo {
@@ -41,4 +41,27 @@ a {
 
 .heading {
     margin-bottom: 2rem;
+}
+
+.cart {
+    position: absolute;
+    top: 25px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartIcon {
+    width: 25px;
+    background-color: white;
+    padding-left: 5px;
+    padding-right: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+}
+
+.cartIcon:hover {
+    background-color: bisque;
 }

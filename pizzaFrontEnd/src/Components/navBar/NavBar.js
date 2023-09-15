@@ -3,6 +3,7 @@ import styles from "./navBar.module.css";
 import logo from "../../images/pizza-logo.avif";
 import { Link } from "react-router-dom";
 import { useAppContext } from "../../context/AuthProvider";
+import cartImg from "../../images/cart-outline.png";
 
 function NavBar() {
   const { isLoggedIn, setIsLoggedIn } = useAppContext();
@@ -17,7 +18,9 @@ function NavBar() {
       <Link className={styles.navLinks} to="/products">
         Products
       </Link>
-      <Link className={styles.navLinks} to="/about-us">About Us</Link>
+      <Link className={styles.navLinks} to="/about-us">
+        About Us
+      </Link>
       <h1 className={styles.heading}>The Pizza Shack</h1>
       <Link
         className={
@@ -41,13 +44,18 @@ function NavBar() {
         Admin Page
       </Link>
       {isLoggedIn ? (
-        <Link
-          to="/"
-          className={styles.navLinks}
-          onClick={() => setIsLoggedIn(!isLoggedIn)}
-        >
-          Logout
-        </Link>
+        <>
+          <Link
+            to="/"
+            className={styles.navLinks}
+            onClick={() => setIsLoggedIn(!isLoggedIn)}
+          >
+            Logout
+          </Link>
+          <Link className={styles.cart} to="/cart">
+            <img className={styles.cartIcon} src={cartImg} alt="cart icon" />
+          </Link>
+        </>
       ) : (
         <Link className={styles.navLinks} to="/login">
           Login
