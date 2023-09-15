@@ -35,11 +35,17 @@ const AdminPage = () => {
             </button>
           </div>
           <div className={styles.submitContainer}>
-            <button className={styles.button}>Add New User</button>
-            <button className={styles.button}>Edit User</button>
+            <button className={styles.button} onClick={navigate("/")}>
+              Add New User
+            </button>
+            <button className={styles.button} onClick={navigate("/")}>
+              Edit User
+            </button>
           </div>
           <div className={styles.submitContainer}>
-            <button className={styles.button}>Delete User</button>
+            <button className={styles.button} onClick={navigate("/")}>
+              Delete User
+            </button>
           </div>
         </form>
       </div>

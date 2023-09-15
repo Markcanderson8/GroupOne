@@ -17,6 +17,8 @@ import MessageSent from "../messageSentPage/MessageSent";
 import AdminPage from "../adminPage/AdminPage";
 import PageNotFound from "../pageNotFound/PageNotFound";
 import AboutPage from "../aboutPage/AboutPage";
+import Cancel from "../cartPage/Cancel";
+import Success from "../cartPage/Success";
 
 function App() {
   const { isLoggedIn } = useAppContext();
@@ -37,6 +39,8 @@ function App() {
           <Route exact path="/products" element={<ProductPage />} />
           <Route exact path="/products/:id" element={<SingleProductPage />} />
           <Route exact path="/cart" element={<Cart />} />
+          <Route exact path="/cancel" element={<Cancel />} />
+          <Route exact path="/success" element={<Success />} />
         </Route>
         <Route
           element={<ProtectedRoutes isLoggedIn={isLoggedIn} role={!role} />}
