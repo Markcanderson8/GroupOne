@@ -1,11 +1,30 @@
 .aboutPage {
    background-image: url("../../images/pizzaBackground.jpeg");
    height: 200px;
+   margin-bottom: 4rem;
 }
+
+.container {
+    width: 40%;
+    background-color: bisque;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 80px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.heading {
+    margin-bottom: 2rem;
+}
+
 .sayings {
-    margin: 0 4rem;
+    width: 100%;
+    margin: 0 auto;
+    line-height: 2rem;
 }
 
 .para {
-    height: 25vh;
+    height: 12vh;
 }
