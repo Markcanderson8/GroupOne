@@ -14,7 +14,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 9px;
     width: 100%;
     margin-top: 60px;
 }
@@ -49,7 +48,7 @@
     background-color: bisque;
     border: 1px solid black;
     border-radius: 30px;
-    margin-left: 5px;
+    margin-left: 1rem;
 }
 
 .delButton:hover {

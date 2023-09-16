@@ -27,7 +27,7 @@ const Cart = ({ cart }) => {
               <div className={styles.price}>
                 <h2>{i.itemPrice}</h2>
               </div>
-              <button className={styles.delButton}>Delete</button>
+              <button className={styles.delButton}>D</button>
             </div>
           ))}
         </div>
