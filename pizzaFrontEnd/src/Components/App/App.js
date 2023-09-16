@@ -19,10 +19,19 @@ import PageNotFound from "../pageNotFound/PageNotFound";
 import AboutPage from "../aboutPage/AboutPage";
 import Cancel from "../cartPage/Cancel";
 import Success from "../cartPage/Success";
+import { useState } from "react";
 
 function App() {
   const { isLoggedIn } = useAppContext();
   const { role } = useAppContext();
+
+  const [cart, setCart] = useState([]);
+
+  const handleClick = (item) => {
+    cart.push(item);
+    console.log(cart);
+  };
+
   return (
     <div className={styles.App}>
       <Header />
@@ -36,9 +45,17 @@ function App() {
         <Route
           element={<ProtectedRoutes isLoggedIn={isLoggedIn} role={role} />}
         >
-          <Route exact path="/products" element={<ProductPage />} />
-          <Route exact path="/products/:id" element={<SingleProductPage />} />
-          <Route exact path="/cart" element={<Cart />} />
+          <Route
+            exact
+            path="/products"
+            element={<ProductPage handleClick={handleClick} />}
+          />
+          <Route
+            exact
+            path="/products/:id"
+            element={<SingleProductPage handleClick={handleClick} />}
+          />
+          <Route exact path="/cart" element={<Cart cart={cart} />} />
           <Route exact path="/cancel" element={<Cancel />} />
           <Route exact path="/success" element={<Success />} />
         </Route>
