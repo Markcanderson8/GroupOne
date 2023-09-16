@@ -26,6 +26,10 @@ public class Item implements Serializable {
     private String itemSize;
     @Column(name = "item_img")
     private String itemImg;
+
+    @Column(name = "quantity")
+    private int quantity;
+
     @JoinColumn(name = "user_id")
     @ManyToOne
     private User user;
@@ -39,19 +43,21 @@ public class Item implements Serializable {
         this.itemSize = itemSize;
     }
 
-    public Item(String itemName, String itemPrice, String itemSize, String itemImg, User user) {
+    public Item(String itemName, String itemPrice, String itemSize, String itemImg, int quantity,  User user) {
         this.itemName = itemName;
         this.itemPrice = itemPrice;
         this.itemSize = itemSize;
         this.itemImg = itemImg;
+        this.quantity = quantity;
         this.user = user;
     }
 
-    public Item(String itemName, String itemPrice, String itemSize, String itemImg) {
+    public Item(String itemName, String itemPrice, String itemSize, String itemImg, int quantity) {
         this.itemName = itemName;
         this.itemPrice = itemPrice;
         this.itemSize = itemSize;
         this.itemImg = itemImg;
+        this.quantity = quantity;
     }
 
     public Long getItemId() {
@@ -94,6 +100,14 @@ public class Item implements Serializable {
         this.itemImg = itemImg;
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     public User getUser() {
         return user;
     }
@@ -108,6 +122,7 @@ public class Item implements Serializable {
                 Objects.isNull(itemName) &&
                 Objects.isNull(itemPrice) &&
                 Objects.isNull(itemSize) &&
+                Objects.isNull(quantity) &&
                 Objects.isNull(user);
     }
 
@@ -118,6 +133,8 @@ public class Item implements Serializable {
                 ", itemName='" + itemName + '\'' +
                 ", itemPrice='" + itemPrice + '\'' +
                 ", itemSize='" + itemSize + '\'' +
+                ", itemImg='" + itemImg + '\'' +
+                ", quantity=" + quantity +
                 ", user=" + user +
                 '}';
     }

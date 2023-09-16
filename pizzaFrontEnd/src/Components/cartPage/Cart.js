@@ -6,7 +6,7 @@ const Cart = ({ cart, setCart, handleChange }) => {
 
   const handlePrice = () => {
     let ans = 0;
-    cart.map((item) => (ans += Number(item.itemPrice)));
+    cart.map((item) => (ans += Number(item.itemPrice) * item.quantity));
     setPrice(ans);
   };
 
@@ -36,7 +36,7 @@ const Cart = ({ cart, setCart, handleChange }) => {
               <button onClick={() => handleChange(i, 1)}>+</button>
 
               <div>
-                <h2>{i.amount}</h2>
+                <h2>{i.quantity}</h2>
               </div>
 
               <button onClick={() => handleChange(i, -1)}>-</button>
