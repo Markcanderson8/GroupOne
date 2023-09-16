@@ -4,7 +4,7 @@
     flex-direction: column;
     margin: auto;
     margin-top: 4rem;
-    width: 600px;
+    width: 700px;
     background: bisque;
     padding-bottom: 30px;
     border-radius: 20px;
@@ -24,7 +24,7 @@
     align-items: center;
     justify-content: center;
     margin: 1rem auto;
-    width: 400px;
+    width: 600px;
     background-color: lightcyan;
     padding: 1rem;
     border-radius: 20px;

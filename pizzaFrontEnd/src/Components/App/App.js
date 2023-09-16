@@ -19,7 +19,7 @@ import PageNotFound from "../pageNotFound/PageNotFound";
 import AboutPage from "../aboutPage/AboutPage";
 import Cancel from "../cartPage/Cancel";
 import Success from "../cartPage/Success";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const { isLoggedIn } = useAppContext();
@@ -28,9 +28,21 @@ function App() {
   const [cart, setCart] = useState([]);
 
   const handleClick = (item) => {
-    cart.push(item);
-    console.log(cart);
+    setCart([...cart, item]);
   };
+
+  const handleChange = (item, d) => {
+    const ind = cart.indexOf(item);
+    const arr = cart;
+    arr[ind].amount += d;
+
+    if (arr[ind].amount === 0) arr[ind].amount = 1;
+    setCart([...arr]);
+  };
+
+  useEffect(() => {
+    console.log("cart changed");
+  }, [cart]);
 
   return (
     <div className={styles.App}>
@@ -55,7 +67,13 @@ function App() {
             path="/products/:id"
             element={<SingleProductPage handleClick={handleClick} />}
           />
-          <Route exact path="/cart" element={<Cart cart={cart} />} />
+          <Route
+            exact
+            path="/cart"
+            element={
+              <Cart cart={cart} setCart={setCart} handleChange={handleChange} />
+            }
+          />
           <Route exact path="/cancel" element={<Cancel />} />
           <Route exact path="/success" element={<Success />} />
         </Route>
