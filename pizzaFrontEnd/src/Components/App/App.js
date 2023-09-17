@@ -20,6 +20,7 @@ import AboutPage from "../aboutPage/AboutPage";
 import Cancel from "../cartPage/Cancel";
 import Success from "../cartPage/Success";
 import { useEffect, useState } from "react";
+import PaymentPage from "../payments/PaymentPage";
 
 function App() {
   const { isLoggedIn } = useAppContext();
@@ -76,8 +77,9 @@ function App() {
               <Cart cart={cart} setCart={setCart} handleChange={handleChange} />
             }
           />
-          <Route exact path="/cancel" element={<Cancel />} />
-          <Route exact path="/success" element={<Success />} />
+          <Route exact path="/cart/purchase/cancel" element={<Cancel />} />
+          <Route exact path="/cart/purchase/success" element={<Success />} />
+          <Route exact path="/cart/purchase" element={<PaymentPage />} />
         </Route>
         <Route
           element={<ProtectedRoutes isLoggedIn={isLoggedIn} role={!role} />}

@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import styles from "./cart.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Cart = ({ cart, setCart, handleChange }) => {
   // this is the cart
   const [price, setPrice] = useState(0);
-
+  const navigate = useNavigate();
   const handlePrice = () => {
     let ans = 0;
     cart.map((item) => (ans += Number(item.itemPrice) * item.quantity));
@@ -63,7 +64,12 @@ const Cart = ({ cart, setCart, handleChange }) => {
               <h1>Total: ${price}</h1>
             </div>
             <div className={styles.submitContainer}>
-              <button className={styles.purchaseButton}>Purchase Items</button>
+              <button
+                className={styles.purchaseButton}
+                onClick={() => navigate("/cart/purchase")}
+              >
+                Purchase Items
+              </button>
             </div>
           </>
         ) : (
