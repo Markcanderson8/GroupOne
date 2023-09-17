@@ -8,7 +8,7 @@ const Cart = ({ cart, setCart, handleChange }) => {
   const handlePrice = () => {
     let ans = 0;
     cart.map((item) => (ans += Number(item.itemPrice) * item.quantity));
-    setPrice(ans);
+    setPrice(ans.toFixed(2));
   };
 
   const handleRemove = (id) => {
