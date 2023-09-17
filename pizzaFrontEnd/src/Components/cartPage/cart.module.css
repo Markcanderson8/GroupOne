@@ -1,101 +1,96 @@
 .container {
-    height: 100vh;
     display: flex;
     flex-direction: column;
-    margin: auto;
-    margin-top: 4rem;
-    width: 700px;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 4rem auto;
+    max-width: 700px;
     background: bisque;
-    padding-bottom: 30px;
+    padding: 30px;
     border-radius: 20px;
-}
-
-.header {
+  }
+  
+  .header {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+ 
+  .row {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    width: 100%;
-    margin-top: 60px;
-}
-
-.row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem auto;
-    width: 600px;
-    background-color: lightcyan;
+    justify-content: space-between;
+    margin: 1rem 0;
     padding: 1rem;
+    width: 100%;
+    max-width: 600px;
+    background-color: lightcyan;
     border-radius: 20px;
-}
-
-.price {
-    margin-left: 2rem;
-}
-
-.pic {
+  }
+  
+  .price {
+    margin-left: auto;
+  }
+  
+ 
+  .pic {
     width: 50px;
     height: 50px;
-    margin-right: 8rem;
-}
+    margin-right: 1rem;
+  }
+  
+ 
+  .name {
+    width: 150px;
+    margin-right: 1rem;
+  }
+  
 
-.name {
-    margin-right: 4rem;
-}
-
-.delete:hover {
-    background-color: rgb(249, 240, 229);
-    cursor: pointer;
-}
-
-.add {
+  .delete {
     width: 30px;
-    margin-right: .25rem;
+    height: 30px;
+    border-radius: 50%;
     font-size: 20px;
     background-color: bisque;
-    border-radius: 10px;
-}
-
-.add:hover {
-    background-color: rgb(249, 240, 229);
     cursor: pointer;
-}
-
-.sub:hover {
+  }
+  
+  .delete:hover {
     background-color: rgb(249, 240, 229);
-    cursor: pointer;
-}
+  }
+  
 
-.sub {
+  .quantity {
+    display: flex;
+    align-items: center;
+  }
+  
+  .add,
+  .sub {
     width: 30px;
-    margin-left: .25rem;
+    height: 30px;
+    border-radius: 50%;
     font-size: 20px;
     background-color: bisque;
-    border-radius: 10px;
-}
+    cursor: pointer;
+    margin: 0 0.25rem;
+  }
+  
+  .add:hover,
+  .sub:hover {
+    background-color: rgb(249, 240, 229);
+  }
+  
 
-.delete {
-    width: 30px;
-    border-radius: 30px;
-    margin-left: 1rem;
-    font-size: 20px;
-    background-color: bisque;
-    border-radius: 10px;
-}
-
-.submitContainer {
+  .submitContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
-    margin: 60px auto;
-}
+    margin-top: 30px;
+  }
+  
 
-.purchaseButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .purchaseButton {
     width: 200px;
     height: 59px;
     color: black;
@@ -105,4 +100,5 @@
     font-size: 19px;
     font-weight: 700;
     cursor: pointer;
-}
+  }
+  
