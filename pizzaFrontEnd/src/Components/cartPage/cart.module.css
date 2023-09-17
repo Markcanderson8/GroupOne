@@ -44,14 +44,65 @@
     margin-right: 4rem;
 }
 
-.delButton {
-    background-color: bisque;
-    border: 1px solid black;
-    border-radius: 30px;
-    margin-left: 1rem;
+.delete:hover {
+    background-color: rgb(249, 240, 229);
+    cursor: pointer;
 }
 
-.delButton:hover {
+.add {
+    width: 30px;
+    margin-right: .25rem;
+    font-size: 20px;
+    background-color: bisque;
+    border-radius: 10px;
+}
+
+.add:hover {
     background-color: rgb(249, 240, 229);
+    cursor: pointer;
+}
+
+.sub:hover {
+    background-color: rgb(249, 240, 229);
+    cursor: pointer;
+}
+
+.sub {
+    width: 30px;
+    margin-left: .25rem;
+    font-size: 20px;
+    background-color: bisque;
+    border-radius: 10px;
+}
+
+.delete {
+    width: 30px;
+    border-radius: 30px;
+    margin-left: 1rem;
+    font-size: 20px;
+    background-color: bisque;
+    border-radius: 10px;
+}
+
+.submitContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 60px auto;
+}
+
+.purchaseButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 59px;
+    color: black;
+    background-color: lightcyan;
+    border-radius: 50px;
+    border: none;
+    font-size: 19px;
+    font-weight: 700;
     cursor: pointer;
 }

@@ -64,16 +64,16 @@ public class MyRunner implements CommandLineRunner {
     }
 
     private void loadItems() {
-        item1 = new Item("Supreme Pizza", "7.99", "12\"", supremeImg, 0, user1);
-        item2 = new Item("Cheese Pizza", "5.99", "12\"", cheeseImg, 0, user2);
-        item3 = new Item("Pepperoni Pizza", "6.99", "12\"", pepperoniImg, 0);
-        item4 = new Item("Sausage Pizza", "6.99", "12\"", chickenBaconRanch, 0, user3);
-        item5 = new Item("Pepsi", "2.99", "2L", pepsiImg, 0, user3);
-        item6 = new Item("Vegan Pizza", "8.99", "12\"", veganImg, 0);
-        item7 = new Item("Dr. Pepper", "2.99", "2L", drPepperImg, 0);
-        item8 = new Item("Sprite", "2.99", "2L", spriteImg, 0);
-        item9 = new Item("Fanta", "2.99", "2L", fantaImg,0, user1);
-        item10 = new Item("Coke", "2.99", "2L", cokeImg, 0, user2);
+        item1 = new Item("Supreme Pizza", "7.99", "12\"", supremeImg, user1);
+        item2 = new Item("Cheese Pizza", "5.99", "12\"", cheeseImg, user2);
+        item3 = new Item("Pepperoni Pizza", "6.99", "12\"", pepperoniImg);
+        item4 = new Item("Sausage Pizza", "6.99", "12\"", chickenBaconRanch, user3);
+        item5 = new Item("Pepsi", "2.99", "2L", pepsiImg,user3);
+        item6 = new Item("Vegan Pizza", "8.99", "12\"", veganImg);
+        item7 = new Item("Dr. Pepper", "2.99", "2L", drPepperImg);
+        item8 = new Item("Sprite", "2.99", "2L", spriteImg);
+        item9 = new Item("Fanta", "2.99", "2L", fantaImg, user1);
+        item10 = new Item("Coke", "2.99", "2L", cokeImg, user2);
         itemRepository.save(item1);
         itemRepository.save(item2);
         itemRepository.save(item3);

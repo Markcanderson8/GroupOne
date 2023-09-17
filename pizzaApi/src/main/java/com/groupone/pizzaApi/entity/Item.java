@@ -43,21 +43,19 @@ public class Item implements Serializable {
         this.itemSize = itemSize;
     }
 
-    public Item(String itemName, String itemPrice, String itemSize, String itemImg, int quantity,  User user) {
+    public Item(String itemName, String itemPrice, String itemSize, String itemImg, User user) {
         this.itemName = itemName;
         this.itemPrice = itemPrice;
         this.itemSize = itemSize;
         this.itemImg = itemImg;
-        this.quantity = quantity;
         this.user = user;
     }
 
-    public Item(String itemName, String itemPrice, String itemSize, String itemImg, int quantity) {
+    public Item(String itemName, String itemPrice, String itemSize, String itemImg) {
         this.itemName = itemName;
         this.itemPrice = itemPrice;
         this.itemSize = itemSize;
         this.itemImg = itemImg;
-        this.quantity = quantity;
     }
 
     public Long getItemId() {

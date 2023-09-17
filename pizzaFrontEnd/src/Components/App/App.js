@@ -28,6 +28,7 @@ function App() {
   const [cart, setCart] = useState([]);
 
   const handleClick = (item) => {
+    if (cart.indexOf(item) !== -1) return;
     setCart([...cart, item]);
   };
 
@@ -35,8 +36,9 @@ function App() {
     const ind = cart.indexOf(item);
     const arr = cart;
     arr[ind].quantity += d;
-
-    if (arr[ind].quantity === 0) arr[ind].quantity = 1;
+    if (arr[ind].quantity === 0) {
+      arr[ind].quantity = 1;
+    }
     setCart([...arr]);
   };
 

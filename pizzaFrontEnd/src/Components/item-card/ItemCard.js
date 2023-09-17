@@ -3,6 +3,7 @@ import styles from "./ItemCard.module.css";
 
 const ItemCard = ({ product, handleClick }) => {
   const { itemId, itemImg, itemName, itemSize, itemPrice } = product;
+
   return (
     <div className={styles.item}>
       <div className={styles.card}>
@@ -15,7 +16,13 @@ const ItemCard = ({ product, handleClick }) => {
           <p>Price: ${itemPrice}</p>
         </div>
         <div className={styles.cartButton}>
-          <Link className={styles.cart} onClick={() => handleClick(product)}>
+          <Link
+            className={styles.cart}
+            onClick={() => {
+              handleClick(product);
+              product.quantity = 1;
+            }}
+          >
             Add to Cart
           </Link>
         </div>
