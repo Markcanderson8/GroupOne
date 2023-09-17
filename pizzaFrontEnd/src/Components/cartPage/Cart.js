@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./cart.module.css";
 
 const Cart = ({ cart, setCart, handleChange }) => {
+  // this is the cart
   const [price, setPrice] = useState(0);
 
   const handlePrice = () => {
