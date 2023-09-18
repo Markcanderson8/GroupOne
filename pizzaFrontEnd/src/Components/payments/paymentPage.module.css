@@ -118,8 +118,21 @@
     cursor: pointer;
 }
 
+.cancelButton {
+    width: 200px;
+    height: 59px;
+    color: black;
+    background-color: rgb(214, 210, 210);
+}
+
 .message {
     font-size: 1.2em;
     text-align: center;
     color: #36a936;
+}
+
+.error {
+    font-size: 1.2em;
+    text-align: center;
+    color: red;
 }

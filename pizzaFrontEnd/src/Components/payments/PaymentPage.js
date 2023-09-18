@@ -3,26 +3,28 @@ import styles from "./paymentPage.module.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const PaymentPage = () => {
+const PaymentPage = ({ cart, setCart }) => {
   const [ccNumber, setCCNumber] = useState("");
   const [name, setName] = useState("");
   const [month, setMonth] = useState("");
   const [year, setYear] = useState("");
   const [cvv, setCvv] = useState("");
-  const [testCCNumber, setTestCCNumber] = useState("2522445585785555");
+  const [testCCNumber] = useState("2522445585785555");
+  const [error, setError] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
-      ccNumber === "2522445585785555" &&
+      ccNumber === testCCNumber &&
       month === "12" &&
       year === "2024" &&
       cvv === "222"
     ) {
+      setCart([]);
       navigate("/cart/purchase/success");
     } else {
-      navigate("/cart/purchase/cancel");
+      setError(true);
     }
   };
 
@@ -48,6 +50,9 @@ const PaymentPage = () => {
               required
             />
           </div>
+          {error && ccNumber !== testCCNumber ? (
+            <h4 className={styles.error}>Invalid CC Length or Number</h4>
+          ) : null}
           <div className={styles.input}>
             <input
               type="text"
@@ -66,6 +71,11 @@ const PaymentPage = () => {
               required
             />
           </div>
+          {error && month !== "12" ? (
+            <h4 className={styles.error}>
+              Month length needs to be two or wrong month
+            </h4>
+          ) : null}
           <div className={styles.input}>
             <input
               type="text"
@@ -75,6 +85,11 @@ const PaymentPage = () => {
               required
             />
           </div>
+          {error && year !== "2024" ? (
+            <h4 className={styles.error}>
+              Year length needs to be 4 or wrong year
+            </h4>
+          ) : null}
           <div className={styles.input}>
             <input
               type="text"
@@ -84,8 +99,20 @@ const PaymentPage = () => {
               required
             />
           </div>
+          {error && cvv !== "222" ? (
+            <h4 className={styles.error}>
+              CVV length needs to be 3 or CVV wrong
+            </h4>
+          ) : null}
         </div>
         <div className={styles.submitContainer}>
+          <button
+            className={styles.button}
+            type="button"
+            onClick={() => navigate("/cart/purchase/cancel")}
+          >
+            Cancel
+          </button>
           <button className={styles.button} type="submit">
             Purchase
           </button>

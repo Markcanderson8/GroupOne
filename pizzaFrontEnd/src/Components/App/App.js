@@ -79,7 +79,11 @@ function App() {
           />
           <Route exact path="/cart/purchase/cancel" element={<Cancel />} />
           <Route exact path="/cart/purchase/success" element={<Success />} />
-          <Route exact path="/cart/purchase" element={<PaymentPage />} />
+          <Route
+            exact
+            path="/cart/purchase"
+            element={<PaymentPage cart={cart} setCart={setCart} />}
+          />
         </Route>
         <Route
           element={<ProtectedRoutes isLoggedIn={isLoggedIn} role={!role} />}
