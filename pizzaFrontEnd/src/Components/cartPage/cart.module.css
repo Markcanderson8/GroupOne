@@ -8,97 +8,100 @@
     background: bisque;
     padding: 30px;
     border-radius: 20px;
-  }
+}
   
-  .header {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
- 
-  .row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 1rem 0;
-    padding: 1rem;
-    width: 100%;
-    max-width: 600px;
-    background-color: lightcyan;
-    border-radius: 20px;
-  }
-  
-  .price {
-    margin-left: auto;
-  }
+.header {
+  text-align: center;
+  margin-top: 20px;
+}
   
  
-  .pic {
-    width: 50px;
-    height: 50px;
-    margin-right: 1rem;
-  }
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+  padding: 1rem;
+  width: 100%;
+  max-width: 600px;
+  background-color: lightcyan;
+  border-radius: 20px;
+}
+  
+.price {
+  margin-left: auto;
+}
   
  
-  .name {
-    width: 150px;
-    margin-right: 1rem;
-  }
+.pic {
+  width: 50px;
+  height: 50px;
+  margin-right: 1rem;
+}
+  
+ 
+.name {
+  width: 150px;
+  margin-right: 1rem;
+}
   
 
-  .delete {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    font-size: 20px;
-    background-color: bisque;
-    cursor: pointer;
-  }
+.delete {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 20px;
+  background-color: bisque;
+  cursor: pointer;
+}
   
-  .delete:hover {
-    background-color: rgb(249, 240, 229);
-  }
-  
-
-  .quantity {
-    display: flex;
-    align-items: center;
-  }
-  
-  .add,
-  .sub {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    font-size: 20px;
-    background-color: bisque;
-    cursor: pointer;
-    margin: 0 0.25rem;
-  }
-  
-  .add:hover,
-  .sub:hover {
-    background-color: rgb(249, 240, 229);
-  }
+.delete:hover {
+  background-color: rgb(249, 240, 229);
+}
   
 
-  .submitContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-  }
+.quantity {
+  display: flex;
+  align-items: center;
+}
+  
+.add,
+.sub {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 20px;
+  background-color: bisque;
+  cursor: pointer;
+  margin: 0 0.25rem;
+}
+  
+.add:hover,
+.sub:hover {
+  background-color: rgb(249, 240, 229);
+}
   
 
-  .purchaseButton {
-    width: 200px;
-    height: 59px;
-    color: black;
-    background-color: lightcyan;
-    border-radius: 50px;
-    border: none;
-    font-size: 19px;
-    font-weight: 700;
-    cursor: pointer;
-  }
+.submitContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
   
+
+.purchaseButton {
+  width: 200px;
+  height: 59px;
+  color: black;
+  background-color: lightcyan;
+  border-radius: 50px;
+  border: none;
+  font-size: 19px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.empty {
+  margin-top: 7rem;
+}

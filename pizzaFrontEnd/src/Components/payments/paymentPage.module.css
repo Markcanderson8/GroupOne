@@ -1,14 +1,14 @@
 .container {
-    height: 100vh;
     display: flex;
     flex-direction: column;
-    margin: auto;
-    margin-top: 4rem;
-    width: 600px;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 4rem auto;
+    max-width: 600px;
     background: bisque;
-    padding-bottom: 30px;
+    padding: 30px;
     border-radius: 20px;
-}
+  }
 
 .header {
     display: flex;
