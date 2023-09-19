@@ -4,7 +4,7 @@ import ItemCard from "../item-card/ItemCard";
 import styles from "./productPage.module.css";
 import { Link } from "react-router-dom";
 
-const ProductPage = ({ handleClick }) => {
+const ProductPage = ({ handleClick, cart }) => {
   const [Items, setItems] = useState([]);
 
   const fetchItems = () => {
@@ -24,6 +24,7 @@ const ProductPage = ({ handleClick }) => {
 
   return (
     <div className={styles.pageContainer}>
+      <div className={styles.numberOfItems}>{cart.length}</div>
       <div className={styles.grid}>
         {Items.map((item) => (
           <Link key={item.itemId} to={`/products/${item.itemId}`}>

@@ -3,8 +3,9 @@ import constants from "../util/constants";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemCard from "../item-card/ItemCard";
+import styles from "./singleProductPage.module.css";
 
-const SingleProductPage = ({ handleClick }) => {
+const SingleProductPage = ({ handleClick, cart }) => {
   const [products, setProducts] = useState([]);
   const params = useParams();
 
@@ -24,6 +25,7 @@ const SingleProductPage = ({ handleClick }) => {
 
   return (
     <div>
+      <div className={styles.numberOfItems}>{cart.length}</div>
       {products
         .filter((p) => p.itemId === Number(params.id))
         .map((filteredProduct) => (

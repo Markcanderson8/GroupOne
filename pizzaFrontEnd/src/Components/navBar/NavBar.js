@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./navBar.module.css";
 import logo from "../../images/pizza-logo.avif";
 import { Link } from "react-router-dom";
@@ -8,6 +8,7 @@ import cartImg from "../../images/cart-outline.png";
 function NavBar() {
   const { isLoggedIn, setIsLoggedIn } = useAppContext();
   const { role } = useAppContext();
+
   return (
     <div className={styles.navBar}>
       <div className={styles.alignLogoCenter}>

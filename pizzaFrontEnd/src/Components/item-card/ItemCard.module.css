@@ -1,86 +1,85 @@
 .item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem 0;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+/* Card styles */
+.card {
+  width: 100%;
+  max-width: 350px; /* Adjust the maximum width as needed */
+  border: 1px solid rgb(113, 94, 94); /* Border color */
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  background-color: bisque; /* Card background color */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hover effect on the card */
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Link styles */
+.link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
   
-  /* Card styles */
+/* Image styles */
+.img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Card body styles */
+.cardBody {
+  padding: 1rem;
+}
+
+/* Heading styles */
+.heading {
+  font-size: 1.5rem;
+  margin: 0;
+}
+  
+/* Description styles */
+.cardBody p {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .item {
+    margin: 1rem 0;
+  }
+
   .card {
-    width: 100%;
-    max-width: 350px; /* Adjust the maximum width as needed */
-    border: 1px solid rgb(113, 94, 94); /* Border color */
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
-    background-color: bisque; /* Card background color */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    max-width: 100%; /* Full width on smaller screens */
   }
-  
-  /* Hover effect on the card */
-  .card:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Link styles */
-  .link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    border-radius: 10px 10px 0 0;
-    overflow: hidden;
-  }
-  
-  /* Image styles */
-  .img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-  
-  /* Card body styles */
-  .cardBody {
-    padding: 1rem;
-  }
-  
-  /* Heading styles */
-  .heading {
-    font-size: 1.5rem;
-    margin: 0;
-  }
-  
-  /* Description styles */
-  .cardBody p {
-    margin: 0;
-    font-size: 1.2rem;
-  }
-  
-  /* Media queries for responsiveness */
-  @media (max-width: 768px) {
-    .item {
-      margin: 1rem 0;
-    }
-  
-    .card {
-      max-width: 100%; /* Full width on smaller screens */
-    }
-  }
+}
 
-  .cartButton {
-    margin-bottom: 1rem;
-  }
+.cartButton {
+  margin-bottom: 1rem;
+}
+.cart {
+  font-size: 18px;
+  font-weight: bold;
+  background-color: bisque;
+  border: 1px solid black;
+  border-radius: 10px;
+}
 
-  .cart {
-    font-size: 18px;
-    font-weight: bold;
-    background-color: bisque;
-    border: 1px solid black;
-    border-radius: 10px;
-  }
-
-  .cart:hover {
-    background-color: rgb(238, 230, 219);
-  }
+.cart:hover {
+  background-color: rgb(238, 230, 219);
+}

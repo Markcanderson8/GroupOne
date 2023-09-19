@@ -63,12 +63,14 @@ function App() {
           <Route
             exact
             path="/products"
-            element={<ProductPage handleClick={handleClick} />}
+            element={<ProductPage handleClick={handleClick} cart={cart} />}
           />
           <Route
             exact
             path="/products/:id"
-            element={<SingleProductPage handleClick={handleClick} />}
+            element={
+              <SingleProductPage handleClick={handleClick} cart={cart} />
+            }
           />
           <Route
             exact

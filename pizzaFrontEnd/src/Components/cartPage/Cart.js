@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import styles from "./cart.module.css";
 import { useNavigate } from "react-router-dom";
+import trashCan from "../../images/trash-can-solid.svg";
+import { Link } from "react-router-dom";
 
 const Cart = ({ cart, setCart, handleChange }) => {
   // this is the cart
@@ -25,6 +27,7 @@ const Cart = ({ cart, setCart, handleChange }) => {
   return (
     <div>
       <div className={styles.container}>
+        <div className={styles.numberOfItems}>{cart.length}</div>
         <div className={styles.header}>
           <h1>Cart</h1>
         </div>
@@ -32,7 +35,9 @@ const Cart = ({ cart, setCart, handleChange }) => {
         <div className={styles.cartItem}>
           {cart.map((i, index) => (
             <div className={styles.row} key={index}>
-              <img className={styles.pic} src={i.itemImg} alt="" />
+              <Link to={`/products/${i.itemId}`}>
+                <img className={styles.pic} src={i.itemImg} alt="" />
+              </Link>
               <h4 className={styles.name}>{i.itemName}</h4>
               <button className={styles.add} onClick={() => handleChange(i, 1)}>
                 +
@@ -53,7 +58,11 @@ const Cart = ({ cart, setCart, handleChange }) => {
                 className={styles.delete}
                 onClick={() => handleRemove(i.itemId)}
               >
-                D
+                <img
+                  className={styles.trash}
+                  src={trashCan}
+                  alt="trash can icon"
+                />
               </button>
             </div>
           ))}
@@ -64,6 +73,12 @@ const Cart = ({ cart, setCart, handleChange }) => {
               <h1>Total: ${price}</h1>
             </div>
             <div className={styles.submitContainer}>
+              <button
+                className={styles.purchaseButton}
+                onClick={() => setCart([])}
+              >
+                Clear Out Cart
+              </button>
               <button
                 className={styles.purchaseButton}
                 onClick={() => navigate("/cart/purchase")}
