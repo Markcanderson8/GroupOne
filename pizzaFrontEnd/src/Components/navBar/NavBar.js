@@ -46,7 +46,7 @@ function NavBar() {
       {isLoggedIn ? (
         <>
           <Link
-            to="/"
+            to="/login"
             className={styles.navLinks}
             onClick={() => setIsLoggedIn(!isLoggedIn)}
           >
