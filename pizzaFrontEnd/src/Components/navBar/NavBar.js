@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import styles from "./navBar.module.css";
 import logo from "../../images/pizza-logo.avif";
 import { Link } from "react-router-dom";
