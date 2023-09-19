@@ -2,10 +2,11 @@ import React from "react";
 import styles from "./adminPage.module.css";
 import { useNavigate } from "react-router-dom";
 
-const AdminPage = () => {
+const AdminPage = ({ cart }) => {
   const navigate = useNavigate();
   return (
     <div>
+      <div className={styles.numberOfItems}>{cart.length}</div>
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={styles.text}>Admin Page</div>

@@ -136,3 +136,15 @@
     color: rgb(0, 255, 0);
 }
 
+.numberOfItems {
+  position: absolute;
+  top: 25px;
+  right: 10px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: blue;
+  color: white;
+  font-size: 20px;
+  padding-bottom: 2px;
+}

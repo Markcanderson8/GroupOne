@@ -94,7 +94,7 @@ function App() {
         <Route
           element={<ProtectedRoutes isLoggedIn={isLoggedIn} role={!role} />}
         >
-          <Route exact path="/adminPage" element={<AdminPage />} />
+          <Route exact path="/adminPage" element={<AdminPage cart={cart} />} />
           <Route exact path="/adminPage/addItems" element={<AddItemsForm />} />
         </Route>
         <Route path="/404" element={<PageNotFound />} />
