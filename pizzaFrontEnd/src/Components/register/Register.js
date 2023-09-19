@@ -10,6 +10,8 @@ const LoginSignup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const [errMsg, setErrMsg] = useState("");
+  const [error, setError] = useState(false);
   const navigate = useNavigate();
 
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -45,7 +47,8 @@ const LoginSignup = () => {
         navigate("/login");
         console.log(res.json.acce);
       } else {
-        setMessage("Some error occured");
+        setError(true);
+        setErrMsg("Some error occured");
       }
     } catch (err) {
       console.log(err);
@@ -106,9 +109,15 @@ const LoginSignup = () => {
             Register
           </button>
         </div>
-        <div className={styles.message}>
-          {message ? <p>{message}</p> : null}
-        </div>
+        {error ? (
+          <div className={styles.errMessage}>
+            <p>{errMsg}</p>
+          </div>
+        ) : (
+          <div className={styles.message}>
+            {message ? <p>{message}</p> : null}
+          </div>
+        )}
       </form>
     </div>
   );
