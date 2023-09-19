@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: flex-start;
     margin: 4rem auto;
-    max-width: 700px;
+    max-width: 600px;
     background: bisque;
     padding: 30px;
     border-radius: 20px;
@@ -22,14 +22,13 @@
   justify-content: space-between;
   margin: 1rem 0;
   padding: 1rem;
-  width: 100%;
   max-width: 600px;
   background-color: lightcyan;
   border-radius: 20px;
 }
   
 .price {
-  margin-left: auto;
+  margin: .25rem .15rem .25rem 2rem;
 }
   
  
@@ -56,7 +55,7 @@
   font-size: 20px;
   background-color: bisque;
   cursor: pointer;
-  margin-left: .5rem;
+  margin-left: .25rem;
 }
   
 .delete:hover {
@@ -104,7 +103,20 @@
   font-size: 19px;
   font-weight: 700;
   cursor: pointer;
-  margin: 1rem;
+  margin: .5rem;
+}
+
+.clearButton {
+  width: 200px;
+  height: 59px;
+  color: black;
+  background-color: lightcyan;
+  border-radius: 50px;
+  border: none;
+  font-size: 19px;
+  font-weight: 700;
+  cursor: pointer;
+  margin: .5rem;
 }
 
 .empty {

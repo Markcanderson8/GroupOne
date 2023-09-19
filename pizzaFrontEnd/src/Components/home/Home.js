@@ -4,9 +4,12 @@ import sausage from "../../images/sausage.jpg";
 import styles from "./home.module.css";
 import { Link } from "react-router-dom";
 
-function Home() {
+function Home({ cart, isLoggedIn }) {
   return (
     <div className={styles.home}>
+      {isLoggedIn ? (
+        <div className={styles.numberOfItems}>{cart.length}</div>
+      ) : null}
       <h1>Any Cheese, Pepperoni, or Cheese 10% off daily!!!</h1>
       <div className={styles.pizzas}>
         <Link to="/products/4">

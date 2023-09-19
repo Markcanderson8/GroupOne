@@ -51,7 +51,11 @@ function App() {
     <div className={styles.App}>
       <Header />
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route
+          exact
+          path="/"
+          element={<Home cart={cart} isLoggedIn={isLoggedIn} />}
+        />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/contact-us" element={<Contact />} />

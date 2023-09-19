@@ -23,7 +23,7 @@ const Login = () => {
           navigate("/products");
         } else if (users[i].role === "user") {
           setRole(users[i].role);
-          navigate("/products");
+          navigate("/");
         }
         setEmail("");
         setPassword("");

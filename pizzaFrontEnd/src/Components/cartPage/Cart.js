@@ -74,7 +74,7 @@ const Cart = ({ cart, setCart, handleChange }) => {
             </div>
             <div className={styles.submitContainer}>
               <button
-                className={styles.purchaseButton}
+                className={styles.clearButton}
                 onClick={() => setCart([])}
               >
                 Clear Out Cart
