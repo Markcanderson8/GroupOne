@@ -14,7 +14,6 @@ const ProductPage = ({ handleClick, cart }) => {
       })
       .then((data) => {
         setItems(data);
-        console.log(data);
       });
   };
 

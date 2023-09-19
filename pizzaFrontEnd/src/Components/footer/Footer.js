@@ -1,16 +1,9 @@
-import React, { useEffect } from "react";
 import styles from "./footer.module.css";
 import { useLocation } from "react-router-dom";
 
 function Footer({ cart }) {
   const location = useLocation();
-  const findPathName = () => {
-    console.log(location.pathname);
-  };
 
-  useEffect(() => {
-    findPathName();
-  });
   return (
     <div>
       {location.pathname === "/cart" && cart.length === 0 ? (
