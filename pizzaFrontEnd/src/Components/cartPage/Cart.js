@@ -92,7 +92,6 @@ const Cart = ({ cart, setCart, handleChange }) => {
             <h1>Cart is Empty</h1>
           </div>
         )}
-        <div className={styles.empty}></div>
       </div>
     </div>
   );

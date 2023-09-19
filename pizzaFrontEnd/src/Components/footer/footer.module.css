@@ -6,6 +6,17 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 11rem;
+    margin-top: 14rem;
+}
+
+.emptyCart {
+    height: 100px;
+    background-color: bisque;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     position: absolute;
+    bottom: 0;
 }

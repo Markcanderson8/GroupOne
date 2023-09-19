@@ -1,9 +1,9 @@
 .container {
-    height: 65vh;
     display: flex;
     flex-direction: column;
-    margin: auto;
-    margin-top: 4rem;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 4rem auto;
     width: 600px;
     background: bisque;
     padding-bottom: 30px;
