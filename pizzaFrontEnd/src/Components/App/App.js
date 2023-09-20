@@ -58,12 +58,22 @@ function App() {
         />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/login" element={<Login />} />
-        <Route exact path="/contact-us" element={<Contact />} />
-        <Route exact path="/message-sent" element={<MessageSent />} />
-        <Route exact path="/about-us" element={<AboutPage />} />
+        <Route exact path="/contact-us" element={<Contact cart={cart} />} />
+        <Route
+          exact
+          path="/message-sent"
+          element={<MessageSent cart={cart} />}
+        />
+        <Route exact path="/about-us" element={<AboutPage cart={cart} />} />
         <Route
           element={<ProtectedRoutes isLoggedIn={isLoggedIn} role={role} />}
         >
+          <Route exact path="/contact-us" element={<Contact cart={cart} />} />
+          <Route
+            exact
+            path="/message-sent"
+            element={<MessageSent cart={cart} />}
+          />
           <Route
             exact
             path="/products"
@@ -94,6 +104,38 @@ function App() {
         <Route
           element={<ProtectedRoutes isLoggedIn={isLoggedIn} role={!role} />}
         >
+          <Route
+            exact
+            path="/products"
+            element={<ProductPage handleClick={handleClick} cart={cart} />}
+          />
+          <Route
+            exact
+            path="/products/:id"
+            element={
+              <SingleProductPage handleClick={handleClick} cart={cart} />
+            }
+          />
+          <Route
+            exact
+            path="/cart"
+            element={
+              <Cart cart={cart} setCart={setCart} handleChange={handleChange} />
+            }
+          />
+          <Route exact path="/cart/purchase/cancel" element={<Cancel />} />
+          <Route exact path="/cart/purchase/success" element={<Success />} />
+          <Route
+            exact
+            path="/cart/purchase"
+            element={<PaymentPage cart={cart} setCart={setCart} />}
+          />
+          <Route exact path="/contact-us" element={<Contact cart={cart} />} />
+          <Route
+            exact
+            path="/message-sent"
+            element={<MessageSent cart={cart} />}
+          />
           <Route exact path="/adminPage" element={<AdminPage cart={cart} />} />
           <Route exact path="/adminPage/addItems" element={<AddItemsForm />} />
         </Route>

@@ -6,7 +6,12 @@ const AdminPage = ({ cart }) => {
   const navigate = useNavigate();
   return (
     <div>
-      <div className={styles.numberOfItems}>{cart.length}</div>
+      {cart.length > 0 ? (
+        <div className={styles.numberOfItems}>{cart.length}</div>
+      ) : (
+        <div className={styles.hideNumItems}>{cart.length}</div>
+      )}
+
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={styles.text}>Admin Page</div>

@@ -1,10 +1,17 @@
 import React from "react";
 import styles from "./messageSent.module.css";
 
-const MessageSent = () => {
+const MessageSent = ({ cart }) => {
   return (
-    <div className={styles.page}>
-      <h1>Message Sent!!!</h1>
+    <div>
+      {cart.length > 0 ? (
+        <div className={styles.numberOfItems}>{cart.length}</div>
+      ) : (
+        <div className={styles.hideNumItems}>{cart.length}</div>
+      )}
+      <div className={styles.page}>
+        <h1>Message Sent!!!</h1>
+      </div>
     </div>
   );
 };

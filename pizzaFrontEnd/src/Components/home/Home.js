@@ -7,9 +7,11 @@ import { Link } from "react-router-dom";
 function Home({ cart, isLoggedIn }) {
   return (
     <div className={styles.home}>
-      {isLoggedIn ? (
+      {isLoggedIn && cart.length > 0 ? (
         <div className={styles.numberOfItems}>{cart.length}</div>
-      ) : null}
+      ) : (
+        <div className={styles.hideNumItems}>{cart.length}</div>
+      )}
       <h1>Any Cheese, Pepperoni, or Cheese 10% off daily!!!</h1>
       <div className={styles.pizzas}>
         <Link to="/products/4">

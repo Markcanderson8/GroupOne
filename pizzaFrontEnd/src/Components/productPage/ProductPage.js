@@ -23,7 +23,11 @@ const ProductPage = ({ handleClick, cart }) => {
 
   return (
     <div className={styles.pageContainer}>
-      <div className={styles.numberOfItems}>{cart.length}</div>
+      {cart.length > 0 ? (
+        <div className={styles.numberOfItems}>{cart.length}</div>
+      ) : (
+        <div className={styles.hideNumItems}>{cart.length}</div>
+      )}
       <div className={styles.grid}>
         {Items.map((item) => (
           <Link key={item.itemId} to={`/products/${item.itemId}`}>

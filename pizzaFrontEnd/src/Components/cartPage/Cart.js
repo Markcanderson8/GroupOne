@@ -27,7 +27,12 @@ const Cart = ({ cart, setCart, handleChange }) => {
   return (
     <div>
       <div className={styles.container}>
-        <div className={styles.numberOfItems}>{cart.length}</div>
+        {cart.length > 0 ? (
+          <div className={styles.numberOfItems}>{cart.length}</div>
+        ) : (
+          <div className={styles.hideNumItems}>{cart.length}</div>
+        )}
+
         <div className={styles.header}>
           <h1>Cart</h1>
         </div>

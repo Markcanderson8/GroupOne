@@ -1,9 +1,14 @@
 import React from "react";
 import styles from "./aboutPage.module.css";
 
-const AboutPage = () => {
+const AboutPage = ({ cart }) => {
   return (
     <>
+      {cart.length > 0 ? (
+        <div className={styles.numberOfItems}>{cart.length}</div>
+      ) : (
+        <div className={styles.hideNumItems}>{cart.length}</div>
+      )}
       <div className={styles.aboutPage}></div>
       <div className={styles.container}>
         <div className={styles.heading}>
