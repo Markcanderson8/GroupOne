@@ -4,9 +4,10 @@ import emailjs from "emailjs-com";
 
 const Contact = () => {
   const navigate = useNavigate();
+
   const sendEmail = (e) => {
     e.preventDefault();
-
+    console.log(e.target.value);
     emailjs
       .sendForm(
         "service_1onj6k6",
@@ -38,6 +39,7 @@ const Contact = () => {
               type="text"
               name="name"
               placeholder="Name"
+              value="hello"
               required
               //onChange={(e) => setName(e.target.value)}
             />
