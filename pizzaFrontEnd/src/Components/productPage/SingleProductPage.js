@@ -25,7 +25,12 @@ const SingleProductPage = ({ handleClick, cart }) => {
 
   return (
     <div>
-      <div className={styles.numberOfItems}>{cart.length}</div>
+      {cart.length > 0 ? (
+        <div className={styles.numberOfItems}>{cart.length}</div>
+      ) : (
+        <div className={styles.hideNumItems}>{cart.length}</div>
+      )}
+
       {products
         .filter((p) => p.itemId === Number(params.id))
         .map((filteredProduct) => (

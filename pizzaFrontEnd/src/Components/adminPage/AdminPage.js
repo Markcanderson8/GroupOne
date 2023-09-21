@@ -27,7 +27,7 @@ const AdminPage = ({ cart }) => {
             </button>
             <button
               className={styles.button}
-              onClick={() => navigate("/adminPage/addItems")}
+              onClick={() => navigate("/adminPage/editItems")}
             >
               Edit Item
             </button>
@@ -35,21 +35,30 @@ const AdminPage = ({ cart }) => {
           <div className={styles.submitContainer}>
             <button
               className={styles.button}
-              onClick={() => navigate("/adminPage/addItems")}
+              onClick={() => navigate("/adminPage/deleteItems")}
             >
               Delete Item
             </button>
           </div>
           <div className={styles.submitContainer}>
-            <button className={styles.button} onClick={navigate("/")}>
+            <button
+              className={styles.button}
+              onClick={() => navigate("/adminPage/addUsers")}
+            >
               Add New User
             </button>
-            <button className={styles.button} onClick={navigate("/")}>
+            <button
+              className={styles.button}
+              onClick={() => navigate("/adminPage/editUsers")}
+            >
               Edit User
             </button>
           </div>
           <div className={styles.submitContainer}>
-            <button className={styles.button} onClick={navigate("/")}>
+            <button
+              className={styles.button}
+              onClick={() => navigate("/adminPage/deleteUsers")}
+            >
               Delete User
             </button>
           </div>

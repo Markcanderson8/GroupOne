@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./addItem.module.css";
-import constants, { ITEMS_ENDPOINT } from "../util/constants";
+import constants, { ITEMS_ENDPOINT } from "../../util/constants";
 import { useNavigate } from "react-router-dom";
 
 const LoginSignup = () => {

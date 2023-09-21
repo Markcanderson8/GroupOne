@@ -8,7 +8,7 @@ import ProductPage from "../productPage/ProductPage";
 import SingleProductPage from "../productPage/SingleProductPage";
 import Register from "../register/Register";
 import Login from "../login/Login";
-import AddItemsForm from "../addItems/AddItemsForm";
+import AddItemsForm from "../adminPage/addItems/AddItemsForm";
 import ProtectedRoutes from "../authorization/ProtectedRoutes";
 import { useAppContext } from "../../context/AuthProvider";
 import Cart from "../cartPage/Cart";
@@ -21,6 +21,11 @@ import Cancel from "../cartPage/Cancel";
 import Success from "../cartPage/Success";
 import { useEffect, useState } from "react";
 import PaymentPage from "../payments/PaymentPage";
+import EditItems from "../adminPage/editItems/EditItems";
+import DeleteItem from "../adminPage/deleteItems/DeleteItem";
+import AddUser from "../adminPage/addUsers/AddUser";
+import EditUser from "../adminPage/editUsers/EditUser";
+import DeleteUser from "../adminPage/deleteUsers/DeleteUser";
 
 function App() {
   const { isLoggedIn } = useAppContext();
@@ -138,6 +143,11 @@ function App() {
           />
           <Route exact path="/adminPage" element={<AdminPage cart={cart} />} />
           <Route exact path="/adminPage/addItems" element={<AddItemsForm />} />
+          <Route exact path="/adminPage/editItems" element={<EditItems />} />
+          <Route exact path="/adminPage/deleteItems" element={<DeleteItem />} />
+          <Route exact path="/adminPage/addUsers" element={<AddUser />} />
+          <Route exact path="/adminPage/editUsers" element={<EditUser />} />
+          <Route exact path="/adminPage/deleteUsers" element={<DeleteUser />} />
         </Route>
         <Route path="/404" element={<PageNotFound />} />
         <Route path="*" element={<Navigate to="/404" />} />
