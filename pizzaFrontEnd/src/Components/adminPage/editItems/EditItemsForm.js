@@ -3,11 +3,16 @@ import { useState } from "react";
 import constants from "../../util/constants";
 import { useNavigate, useParams } from "react-router-dom";
 
-const EditItemsForm = ({ cart }) => {
-  const [itemName, setItemName] = useState("");
-  const [itemPrice, setItemPrice] = useState("");
-  const [itemSize, setItemSize] = useState("");
-  const [itemImg, setItemImg] = useState("");
+const EditItemsForm = ({
+  productName,
+  productPrice,
+  productSize,
+  productImg,
+}) => {
+  const [itemName, setItemName] = useState(productName);
+  const [itemPrice, setItemPrice] = useState(productPrice);
+  const [itemSize, setItemSize] = useState(productSize);
+  const [itemImg, setItemImg] = useState(productImg);
   const [message, setMessage] = useState("");
   const [error, setError] = useState(false);
 
@@ -19,29 +24,32 @@ const EditItemsForm = ({ cart }) => {
   let handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      let res = await fetch(constants.BASE_URL_API + constants.ITEMS_ENDPOINT, {
-        method: "PUT",
-        body: JSON.stringify({
-          itemName: itemName,
-          itemPrice: itemPrice,
-          itemSize: itemSize,
-          itemImg: itemImg,
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      });
+      let res = await fetch(
+        `${constants.BASE_URL_API}${constants.ITEMS_ENDPOINT}/${params.id}`,
+        {
+          method: "PUT",
+          body: JSON.stringify({
+            itemId: params.id,
+            itemName: itemName,
+            itemPrice: itemPrice,
+            itemSize: itemSize,
+            itemImg: itemImg,
+          }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        }
+      );
       console.log(res);
-      // let resJson = await res.json();
       if (res.status === 200) {
         setItemName("");
         setItemPrice("");
         setItemSize("");
         setItemImg("");
-        setMessage("Item Created Successfully!!!");
+        setMessage("Item Edited Successfully!!!");
         await sleep(2000);
         console.log(res.json.acce);
-        navigate("/products");
+        navigate("/adminPage");
       } else {
         setError(true);
         setMessage("Some error occured");
@@ -52,14 +60,9 @@ const EditItemsForm = ({ cart }) => {
   };
   return (
     <div>
-      {cart.length > 0 ? (
-        <div className={styles.numberOfItems}>{cart.length}</div>
-      ) : (
-        <div className={styles.hideNumItems}>{cart.length}</div>
-      )}
       <div className={styles.container}>
         <div className={styles.header}>
-          <div className={styles.text}>Add Item</div>
+          <div className={styles.text}>Edit Item</div>
           <div className={styles.underline}></div>
         </div>
         <form onSubmit={handleSubmit}>
@@ -67,7 +70,7 @@ const EditItemsForm = ({ cart }) => {
             <div className={styles.input}>
               <input
                 type="text"
-                value={params.itemName}
+                defaultValue={productName}
                 placeholder="Name"
                 onChange={(e) => setItemName(e.target.value)}
                 required
@@ -76,7 +79,7 @@ const EditItemsForm = ({ cart }) => {
             <div className={styles.input}>
               <input
                 type="text"
-                value={params.itemPrice}
+                defaultValue={productPrice}
                 placeholder="Price"
                 onChange={(e) => setItemPrice(e.target.value)}
                 required
@@ -85,7 +88,7 @@ const EditItemsForm = ({ cart }) => {
             <div className={styles.input}>
               <input
                 type="text"
-                value={params.itemSize}
+                defaultValue={productSize}
                 placeholder="Size"
                 onChange={(e) => setItemSize(e.target.value)}
                 required
@@ -94,7 +97,7 @@ const EditItemsForm = ({ cart }) => {
             <div className={styles.input}>
               <input
                 type="text"
-                value={params.itemImg}
+                defaultValue={productImg}
                 placeholder="Image"
                 onChange={(e) => setItemImg(e.target.value)}
                 required

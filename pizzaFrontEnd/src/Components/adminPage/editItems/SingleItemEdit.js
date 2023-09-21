@@ -35,11 +35,13 @@ const SingleItemEdit = ({ cart }) => {
         .map((filteredProduct) => (
           <div key={filteredProduct.itemId}>
             <div>
-              <h1>{filteredProduct.itemName}</h1>
-            </div>
-            <div>
               <div>
-                <EditItemsForm />
+                <EditItemsForm
+                  productName={filteredProduct.itemName}
+                  productPrice={filteredProduct.itemPrice}
+                  productSize={filteredProduct.itemSize}
+                  productImg={filteredProduct.itemImg}
+                />
               </div>
             </div>
           </div>

@@ -36,11 +36,12 @@ public class Item implements Serializable {
 
     public Item() {}
 
-    public Item(Long itemId, String itemName, String itemPrice, String itemSize) {
+    public Item(Long itemId, String itemName, String itemPrice, String itemSize, String itemImg) {
         this.itemId = itemId;
         this.itemName = itemName;
         this.itemPrice = itemPrice;
         this.itemSize = itemSize;
+        this.itemImg = itemImg;
     }
 
     public Item(String itemName, String itemPrice, String itemSize, String itemImg, User user) {
@@ -120,6 +121,7 @@ public class Item implements Serializable {
                 Objects.isNull(itemName) &&
                 Objects.isNull(itemPrice) &&
                 Objects.isNull(itemSize) &&
+                Objects.isNull(itemImg) &&
                 Objects.isNull(quantity) &&
                 Objects.isNull(user);
     }

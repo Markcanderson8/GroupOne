@@ -46,7 +46,7 @@ const EditItems = ({ cart }) => {
               </div>
               <button
                 className={styles.editButton}
-                onClick={navigate(`/adminPage/editItems/${i.itemId}`)}
+                onClick={() => navigate(`/adminPage/editItems/${i.itemId}`)}
               >
                 Edit
               </button>
