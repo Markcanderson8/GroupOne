@@ -3,7 +3,7 @@ import styles from "./addItem.module.css";
 import constants, { ITEMS_ENDPOINT } from "../../util/constants";
 import { useNavigate } from "react-router-dom";
 
-const LoginSignup = () => {
+const LoginSignup = ({ cart }) => {
   const [itemName, setItemName] = useState("");
   const [itemPrice, setItemPrice] = useState("");
   const [itemSize, setItemSize] = useState("");
@@ -51,59 +51,66 @@ const LoginSignup = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        <div className={styles.text}>Add Item</div>
-        <div className={styles.underline}></div>
+    <div>
+      {cart.length > 0 ? (
+        <div className={styles.numberOfItems}>{cart.length}</div>
+      ) : (
+        <div className={styles.hideNumItems}>{cart.length}</div>
+      )}
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <div className={styles.text}>Add Item</div>
+          <div className={styles.underline}></div>
+        </div>
+        <form onSubmit={handleSubmit}>
+          <div className={styles.inputs}>
+            <div className={styles.input}>
+              <input
+                type="text"
+                value={itemName}
+                placeholder="Name"
+                onChange={(e) => setItemName(e.target.value)}
+                required
+              />
+            </div>
+            <div className={styles.input}>
+              <input
+                type="text"
+                value={itemPrice}
+                placeholder="Price"
+                onChange={(e) => setItemPrice(e.target.value)}
+                required
+              />
+            </div>
+            <div className={styles.input}>
+              <input
+                type="text"
+                value={itemSize}
+                placeholder="Size"
+                onChange={(e) => setItemSize(e.target.value)}
+                required
+              />
+            </div>
+            <div className={styles.input}>
+              <input
+                type="text"
+                value={itemImg}
+                placeholder="Image"
+                onChange={(e) => setItemImg(e.target.value)}
+                required
+              />
+            </div>
+          </div>
+          <div className={styles.submitContainer}>
+            <button className={styles.button} type="submit">
+              Submit
+            </button>
+          </div>
+          <div className={error ? styles.errMsg : styles.message}>
+            {message ? <p>{message}</p> : null}
+          </div>
+        </form>
       </div>
-      <form onSubmit={handleSubmit}>
-        <div className={styles.inputs}>
-          <div className={styles.input}>
-            <input
-              type="text"
-              value={itemName}
-              placeholder="Name"
-              onChange={(e) => setItemName(e.target.value)}
-              required
-            />
-          </div>
-          <div className={styles.input}>
-            <input
-              type="text"
-              value={itemPrice}
-              placeholder="Price"
-              onChange={(e) => setItemPrice(e.target.value)}
-              required
-            />
-          </div>
-          <div className={styles.input}>
-            <input
-              type="text"
-              value={itemSize}
-              placeholder="Size"
-              onChange={(e) => setItemSize(e.target.value)}
-              required
-            />
-          </div>
-          <div className={styles.input}>
-            <input
-              type="text"
-              value={itemImg}
-              placeholder="Image"
-              onChange={(e) => setItemImg(e.target.value)}
-              required
-            />
-          </div>
-        </div>
-        <div className={styles.submitContainer}>
-          <button className={styles.button} type="submit">
-            Submit
-          </button>
-        </div>
-        <div className={error ? styles.errMsg : styles.message}>
-          {message ? <p>{message}</p> : null}
-        </div>
-      </form>
     </div>
   );
 };

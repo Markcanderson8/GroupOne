@@ -142,12 +142,36 @@ function App() {
             element={<MessageSent cart={cart} />}
           />
           <Route exact path="/adminPage" element={<AdminPage cart={cart} />} />
-          <Route exact path="/adminPage/addItems" element={<AddItemsForm />} />
-          <Route exact path="/adminPage/editItems" element={<EditItems />} />
-          <Route exact path="/adminPage/deleteItems" element={<DeleteItem />} />
-          <Route exact path="/adminPage/addUsers" element={<AddUser />} />
-          <Route exact path="/adminPage/editUsers" element={<EditUser />} />
-          <Route exact path="/adminPage/deleteUsers" element={<DeleteUser />} />
+          <Route
+            exact
+            path="/adminPage/addItems"
+            element={<AddItemsForm cart={cart} />}
+          />
+          <Route
+            exact
+            path="/adminPage/editItems"
+            element={<EditItems cart={cart} />}
+          />
+          <Route
+            exact
+            path="/adminPage/deleteItems"
+            element={<DeleteItem cart={cart} />}
+          />
+          <Route
+            exact
+            path="/adminPage/addUsers"
+            element={<AddUser cart={cart} />}
+          />
+          <Route
+            exact
+            path="/adminPage/editUsers"
+            element={<EditUser cart={cart} />}
+          />
+          <Route
+            exact
+            path="/adminPage/deleteUsers"
+            element={<DeleteUser cart={cart} />}
+          />
         </Route>
         <Route path="/404" element={<PageNotFound />} />
         <Route path="*" element={<Navigate to="/404" />} />
