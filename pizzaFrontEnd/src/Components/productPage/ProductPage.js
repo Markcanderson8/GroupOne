@@ -28,15 +28,13 @@ const ProductPage = ({ handleClick, cart }) => {
       ) : (
         <div className={styles.hideNumItems}>{cart.length}</div>
       )}
-      <div className={styles.grid}>
-        {Items.map((item) => (
-          <Link key={item.itemId} to={`/products/${item.itemId}`}>
-            <div className={styles.cardFont}>
-              <ItemCard product={item} handleClick={handleClick} />
-            </div>
-          </Link>
-        ))}
-      </div>
+      {Items.map((item) => (
+        <Link key={item.itemId} to={`/products/${item.itemId}`}>
+          <div className={styles.cardFont}>
+            <ItemCard product={item} handleClick={handleClick} />
+          </div>
+        </Link>
+      ))}
     </div>
   );
 };
