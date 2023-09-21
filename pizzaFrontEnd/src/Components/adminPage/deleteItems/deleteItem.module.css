@@ -1,18 +1,37 @@
 .container {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: flex-start;
-    margin: 4rem auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4rem;
     max-width: 600px;
     background: bisque;
-    padding: 30px;
+    padding-bottom: 30px;
     border-radius: 20px;
 }
   
 .header {
-  text-align: center;
-  margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    margin-top: 60px;
+}
+
+.text {
+    color: black;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.underline {
+    width: 61px;
+    height: 6px;
+    background: black;
+    border-radius: 9px;
+    margin-bottom: 2rem;
 }
   
  
@@ -22,7 +41,7 @@
   justify-content: space-between;
   margin: 1rem 0;
   padding: 1rem;
-  max-width: 600px;
+  width: 500px;
   background-color: lightcyan;
   border-radius: 20px;
 }
@@ -151,4 +170,11 @@
 
 .hideNumItems {
     display: none;
+}
+
+.cartItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
 }

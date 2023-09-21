@@ -42,7 +42,7 @@ const DeleteItem = ({ cart }) => {
       )}
       <div className={styles.container}>
         <div className={styles.header}>
-          <div className={styles.text}>Page Under Construction!!!</div>
+          <div className={styles.text}>Delete Item</div>
           <div className={styles.underline}></div>
         </div>
         <div className={styles.cartItem}>
