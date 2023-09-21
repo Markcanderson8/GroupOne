@@ -32,7 +32,6 @@ const Cart = ({ cart, setCart, handleChange }) => {
         ) : (
           <div className={styles.hideNumItems}>{cart.length}</div>
         )}
-
         <div className={styles.header}>
           <h1>Cart</h1>
         </div>

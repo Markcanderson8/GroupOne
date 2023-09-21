@@ -30,6 +30,11 @@ const PaymentPage = ({ cart, setCart }) => {
 
   return (
     <div className={styles.container}>
+      {cart.length > 0 ? (
+        <div className={styles.numberOfItems}>{cart.length}</div>
+      ) : (
+        <div className={styles.hideNumItems}>{cart.length}</div>
+      )}
       <div className={styles.header}>
         <div className={styles.text}>Make a Payment</div>
         <div className={styles.underline}></div>

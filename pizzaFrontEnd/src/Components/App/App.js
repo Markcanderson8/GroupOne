@@ -98,7 +98,11 @@ function App() {
               <Cart cart={cart} setCart={setCart} handleChange={handleChange} />
             }
           />
-          <Route exact path="/cart/purchase/cancel" element={<Cancel />} />
+          <Route
+            exact
+            path="/cart/purchase/cancel"
+            element={<Cancel cart={cart} />}
+          />
           <Route exact path="/cart/purchase/success" element={<Success />} />
           <Route
             exact
@@ -128,7 +132,11 @@ function App() {
               <Cart cart={cart} setCart={setCart} handleChange={handleChange} />
             }
           />
-          <Route exact path="/cart/purchase/cancel" element={<Cancel />} />
+          <Route
+            exact
+            path="/cart/purchase/cancel"
+            element={<Cancel cart={cart} />}
+          />
           <Route exact path="/cart/purchase/success" element={<Success />} />
           <Route
             exact
