@@ -26,6 +26,7 @@ import DeleteItem from "../adminPage/deleteItems/DeleteItem";
 import AddUser from "../adminPage/addUsers/AddUser";
 import EditUser from "../adminPage/editUsers/EditUser";
 import DeleteUser from "../adminPage/deleteUsers/DeleteUser";
+import SingleItemEdit from "../adminPage/editItems/SingleItemEdit";
 
 function App() {
   const { isLoggedIn } = useAppContext();
@@ -159,6 +160,11 @@ function App() {
             exact
             path="/adminPage/editItems"
             element={<EditItems cart={cart} />}
+          />
+          <Route
+            exact
+            path="/adminPage/editItems/:id"
+            element={<SingleItemEdit cart={cart} />}
           />
           <Route
             exact
