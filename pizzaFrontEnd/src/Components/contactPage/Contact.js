@@ -68,7 +68,9 @@ const Contact = ({ cart }) => {
               />
             </div>
           </div>
-          <Button name={"Send Message"} />
+          <div className={styles.submitContainer}>
+            <Button name={"Send Message"} />
+          </div>
         </form>
       </div>
     </div>

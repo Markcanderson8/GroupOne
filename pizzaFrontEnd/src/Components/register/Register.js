@@ -105,7 +105,9 @@ const LoginSignup = () => {
             />
           </div>
         </div>
-        <Button name={"Register"} />
+        <div className={styles.submitContainer}>
+          <Button name={"Register"} />
+        </div>
         {error ? (
           <div className={styles.errMessage}>
             <p>{errMsg}</p>

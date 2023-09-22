@@ -75,10 +75,9 @@ const Login = () => {
               />
             </div>
           </div>
-          <Button name={"Login"} />
-          {/* <div className={styles.submitContainer}>
-            <button className={styles.button}>Login</button>
-          </div> */}
+          <div className={styles.submitContainer}>
+            <Button name={"Login"} />
+          </div>
           <div>
             {error ? (
               <p className={styles.error}>Email or Password invalid</p>
