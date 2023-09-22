@@ -17,52 +17,50 @@ const AdminPage = ({ cart }) => {
           <div className={styles.text}>Admin Page</div>
           <div className={styles.underline}></div>
         </div>
-        <form>
-          <div className={styles.submitContainer}>
-            <button
-              className={styles.button}
-              onClick={() => navigate("/adminPage/addItems")}
-            >
-              Add New Item
-            </button>
-            <button
-              className={styles.button}
-              onClick={() => navigate("/adminPage/editItems")}
-            >
-              Edit Item
-            </button>
-          </div>
-          <div className={styles.submitContainer}>
-            <button
-              className={styles.button}
-              onClick={() => navigate("/adminPage/deleteItems")}
-            >
-              Delete Item
-            </button>
-          </div>
-          <div className={styles.submitContainer}>
-            <button
-              className={styles.button}
-              onClick={() => navigate("/adminPage/addUsers")}
-            >
-              Add New User
-            </button>
-            <button
-              className={styles.button}
-              onClick={() => navigate("/adminPage/editUsers")}
-            >
-              Edit User
-            </button>
-          </div>
-          <div className={styles.submitContainer}>
-            <button
-              className={styles.button}
-              onClick={() => navigate("/adminPage/deleteUsers")}
-            >
-              Delete User
-            </button>
-          </div>
-        </form>
+        <div className={styles.submitContainer}>
+          <button
+            className={styles.button}
+            onClick={() => navigate("/adminPage/addItems")}
+          >
+            Add New Item
+          </button>
+          <button
+            className={styles.button}
+            onClick={() => navigate("/adminPage/editItems")}
+          >
+            Edit Item
+          </button>
+        </div>
+        <div className={styles.submitContainer}>
+          <button
+            className={styles.button}
+            onClick={() => navigate("/adminPage/deleteItems")}
+          >
+            Delete Item
+          </button>
+        </div>
+        <div className={styles.submitContainer}>
+          <button
+            className={styles.button}
+            onClick={() => navigate("/adminPage/addUsers")}
+          >
+            Add New User
+          </button>
+          <button
+            className={styles.button}
+            onClick={() => navigate("/adminPage/editUsers")}
+          >
+            Edit User
+          </button>
+        </div>
+        <div className={styles.submitContainer}>
+          <button
+            className={styles.button}
+            onClick={() => navigate("/adminPage/deleteUsers")}
+          >
+            Delete User
+          </button>
+        </div>
       </div>
     </div>
   );

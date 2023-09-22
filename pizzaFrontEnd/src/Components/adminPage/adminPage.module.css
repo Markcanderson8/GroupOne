@@ -1,7 +1,7 @@
 .container {
-    height: 75vh;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     margin: auto;
     margin-top: 4rem;
     width: 600px;
@@ -30,6 +30,7 @@
     height: 6px;
     background: black;
     border-radius: 9px;
+    margin-bottom: 1rem;
 }
 
 .inputs {
@@ -81,7 +82,7 @@
     justify-content: center;
     align-items: center;
     gap: 30px;
-    margin: 60px auto;
+    margin: 30px auto;
 }
 
 .submit {
