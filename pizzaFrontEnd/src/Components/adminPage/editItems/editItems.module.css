@@ -150,6 +150,8 @@
     background-color: bisque;
     cursor: pointer;
     font-size: 20px;
+    border-radius: 30px;
+    font-weight: bold;
 }
 
 .deleteButton:hover {
