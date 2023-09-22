@@ -23,6 +23,8 @@ public class MyRunner implements CommandLineRunner {
     @Autowired
     private ItemRepository itemRepository;
 
+    List<Item> items = new ArrayList<>();
+
     Item item1;
     Item item2;
     Item item3;
@@ -94,6 +96,4 @@ public class MyRunner implements CommandLineRunner {
         userRepository.save(user2);
         userRepository.save(user3);
     }
-
-
 }
