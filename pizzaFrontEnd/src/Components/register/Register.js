@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./register.module.css";
 import constants, { USERS_ENDPOINT } from "../util/constants";
 import { useNavigate } from "react-router-dom";
+import Button from "../buttonComponent/Button";
 
 const LoginSignup = () => {
   const [firstName, setFirstName] = useState("");
@@ -104,11 +105,7 @@ const LoginSignup = () => {
             />
           </div>
         </div>
-        <div className={styles.submitContainer}>
-          <button className={styles.button} type="submit">
-            Register
-          </button>
-        </div>
+        <Button name={"Register"} />
         {error ? (
           <div className={styles.errMessage}>
             <p>{errMsg}</p>
