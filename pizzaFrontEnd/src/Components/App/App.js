@@ -36,7 +36,15 @@ function App() {
 
   const handleClick = (item) => {
     if (cart.indexOf(item) !== -1) return;
-    setCart([...cart, item]);
+    if (cart.length > 0) {
+      cart.map((i) =>
+        i.itemName === item.itemName
+          ? alert("Item Already In Cart!!!")
+          : setCart([...cart, item])
+      );
+    } else {
+      setCart([...cart, item]);
+    }
   };
 
   const handleChange = (item, d) => {

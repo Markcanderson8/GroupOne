@@ -12,7 +12,6 @@ const Login = () => {
   const [error, setError] = useState(false);
   const { isLoggedIn, setIsLoggedIn } = useAppContext();
   const { setRole } = useAppContext();
-  console.log(users);
   const handleSubmit = (e) => {
     e.preventDefault();
     for (var i = 0; i < users.length; i++) {
