@@ -66,12 +66,12 @@ public class MyRunner implements CommandLineRunner {
     }
 
     private void loadItems() {
-        item1 = new Item("Supreme Pizza", "7.99", "12\"", supremeImg, user1);
-        item2 = new Item("Cheese Pizza", "5.99", "12\"", cheeseImg, user2);
-        item3 = new Item("Pepperoni Pizza", "6.99", "12\"", pepperoniImg);
-        item4 = new Item("Sausage Pizza", "6.99", "12\"", chickenBaconRanch, user3);
+        item1 = new Item("Supreme", "7.99", "12\"", supremeImg, user1);
+        item2 = new Item("Cheese", "5.99", "12\"", cheeseImg, user2);
+        item3 = new Item("Pepperoni", "6.99", "12\"", pepperoniImg);
+        item4 = new Item("Sausage", "6.99", "12\"", chickenBaconRanch, user3);
         item5 = new Item("Pepsi", "2.99", "2L", pepsiImg,user3);
-        item6 = new Item("Vegan Pizza", "8.99", "12\"", veganImg);
+        item6 = new Item("Vegan", "8.99", "12\"", veganImg);
         item7 = new Item("Dr. Pepper", "2.99", "2L", drPepperImg);
         item8 = new Item("Sprite", "2.99", "2L", spriteImg);
         item9 = new Item("Fanta", "2.99", "2L", fantaImg, user1);

@@ -19,7 +19,7 @@ import PageNotFound from "../pageNotFound/PageNotFound";
 import AboutPage from "../aboutPage/AboutPage";
 import Cancel from "../cartPage/Cancel";
 import Success from "../cartPage/Success";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import PaymentPage from "../payments/PaymentPage";
 import EditItems from "../adminPage/editItems/EditItems";
 import DeleteItem from "../adminPage/deleteItems/DeleteItem";
@@ -35,10 +35,14 @@ function App() {
   const [cart, setCart] = useState([]);
 
   const handleClick = (item) => {
-    if (cart.indexOf(item) !== -1) return;
+    if (cart.indexOf(item) !== -1) {
+      return;
+    }
     if (cart.length > 0) {
       cart.map((i) =>
-        i.itemName === item.itemName ? null : setCart([...cart, item])
+        i.itemId === item.itemId
+          ? alert("Item in already in cart!!!")
+          : setCart([...cart, item])
       );
     } else {
       setCart([...cart, item]);
@@ -56,7 +60,7 @@ function App() {
   };
 
   useEffect(() => {
-    console.log("cart changed");
+    console.log(cart);
   }, [cart]);
 
   return (

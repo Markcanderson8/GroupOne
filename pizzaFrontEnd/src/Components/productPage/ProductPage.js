@@ -31,7 +31,7 @@ const ProductPage = ({ handleClick, cart }) => {
       {Items.map((item) => (
         <Link key={item.itemId} to={`/products/${item.itemId}`}>
           <div className={styles.cardFont}>
-            <ItemCard product={item} handleClick={handleClick} />
+            <ItemCard product={item} handleClick={handleClick} cart={cart} />
           </div>
         </Link>
       ))}

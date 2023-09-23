@@ -1,11 +1,8 @@
 import React from "react";
 import styles from "./adminPage.module.css";
-import { useNavigate } from "react-router-dom";
 import Button from "../button/Button";
 
 const AdminPage = ({ cart }) => {
-  const navigate = useNavigate();
-
   return (
     <div>
       {cart.length > 0 ? (

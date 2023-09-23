@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styles from "./register.module.css";
 import constants, { USERS_ENDPOINT } from "../util/constants";
 import { useNavigate } from "react-router-dom";
-import Button from "../button/Button";
 
 const LoginSignup = () => {
   const [firstName, setFirstName] = useState("");
@@ -106,8 +105,7 @@ const LoginSignup = () => {
           </div>
         </div>
         <div className={styles.submitContainer}>
-          <Button name={"Register"} />
-          {/* <button className={styles.button}>Register</button> */}
+          <button className={styles.button}>Register</button>
         </div>
         {error ? (
           <div className={styles.errMessage}>
