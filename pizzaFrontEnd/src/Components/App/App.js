@@ -38,9 +38,7 @@ function App() {
     if (cart.indexOf(item) !== -1) return;
     if (cart.length > 0) {
       cart.map((i) =>
-        i.itemName === item.itemName
-          ? alert("Item Already In Cart!!!")
-          : setCart([...cart, item])
+        i.itemName === item.itemName ? null : setCart([...cart, item])
       );
     } else {
       setCart([...cart, item]);
