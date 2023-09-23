@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./contact.module.css";
 import emailjs from "emailjs-com";
+import Button from "../button/Button";
 
 const Contact = ({ cart }) => {
   const navigate = useNavigate();
@@ -68,7 +69,7 @@ const Contact = ({ cart }) => {
             </div>
           </div>
           <div className={styles.submitContainer}>
-            <button className={styles.button}>Send Message</button>
+            <Button name={"Send Message"} />
           </div>
         </form>
       </div>
