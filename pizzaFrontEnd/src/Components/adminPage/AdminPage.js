@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./adminPage.module.css";
 import { useNavigate } from "react-router-dom";
+import Button from "../button/Button";
 
 const AdminPage = ({ cart }) => {
   const navigate = useNavigate();
@@ -19,48 +20,18 @@ const AdminPage = ({ cart }) => {
           <div className={styles.underline}></div>
         </div>
         <div className={styles.submitContainer}>
-          <button
-            className={styles.button}
-            onClick={() => navigate("/adminPage/addItems")}
-          >
-            Add Item
-          </button>
-          <button
-            className={styles.button}
-            onClick={() => navigate("/adminPage/editItems")}
-          >
-            Edit Item
-          </button>
+          <Button name={"Add Item"} />
+          <Button name={"Edit Item"} />
         </div>
         <div className={styles.submitContainer}>
-          <button
-            className={styles.button}
-            onClick={() => navigate("/adminPage/deleteItems")}
-          >
-            Delete Item
-          </button>
+          <Button name={"Delete Item"} />
         </div>
         <div className={styles.submitContainer}>
-          <button
-            className={styles.button}
-            onClick={() => navigate("/adminPage/addUsers")}
-          >
-            Add New User
-          </button>
-          <button
-            className={styles.button}
-            onClick={() => navigate("/adminPage/editUsers")}
-          >
-            Add New User
-          </button>
+          <Button name={"Add User"} />
+          <Button name={"Edit User"} />
         </div>
         <div className={styles.submitContainer}>
-          <button
-            className={styles.button}
-            onClick={() => navigate("/adminPage/deleteUsers")}
-          >
-            Delete User
-          </button>
+          <Button name={"Delete User"} />
         </div>
       </div>
     </div>

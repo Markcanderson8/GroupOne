@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./addItem.module.css";
 import constants, { ITEMS_ENDPOINT } from "../../util/constants";
 import { useNavigate } from "react-router-dom";
+import Button from "../../button/Button";
 
 const LoginSignup = ({ cart }) => {
   const [itemName, setItemName] = useState("");
@@ -102,9 +103,7 @@ const LoginSignup = ({ cart }) => {
             </div>
           </div>
           <div className={styles.submitContainer}>
-            <button className={styles.button} type="submit">
-              Submit
-            </button>
+            <Button name={"Submit"} />
           </div>
           <div className={error ? styles.errMsg : styles.message}>
             {message ? <p>{message}</p> : null}
