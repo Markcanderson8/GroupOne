@@ -1,35 +1,9 @@
 import React from "react";
 import styles from "./adminPage.module.css";
 import { useNavigate } from "react-router-dom";
-import Button from "../buttonComponent/Button";
 
 const AdminPage = ({ cart }) => {
   const navigate = useNavigate();
-
-  const handleClick = (name) => {
-    switch (name) {
-      case "Add New Item":
-        navigate("/adminPage/addItems");
-        break;
-      case "Edit Item":
-        navigate("/adminPage/editItems");
-        break;
-      case "Delete Item":
-        navigate("/adminPage/deleteItems");
-        break;
-      case "Add New User":
-        navigate("/adminPage/addUsers");
-        break;
-      case "Edit User":
-        navigate("/adminPage/editUsers");
-        break;
-      case "Delete User":
-        navigate("/adminPage/deleteUsers");
-        break;
-      default:
-        break;
-    }
-  };
 
   return (
     <div>
@@ -45,18 +19,48 @@ const AdminPage = ({ cart }) => {
           <div className={styles.underline}></div>
         </div>
         <div className={styles.submitContainer}>
-          <Button name={"Add New Item"} handleClick={handleClick} />
-          <Button name={"Edit Item"} handleClick={handleClick} />
+          <button
+            className={styles.button}
+            onClick={() => navigate("/adminPage/addItems")}
+          >
+            Add Item
+          </button>
+          <button
+            className={styles.button}
+            onClick={() => navigate("/adminPage/editItems")}
+          >
+            Edit Item
+          </button>
         </div>
         <div className={styles.submitContainer}>
-          <Button name={"Delete Item"} handleClick={handleClick} />
+          <button
+            className={styles.button}
+            onClick={() => navigate("/adminPage/deleteItems")}
+          >
+            Delete Item
+          </button>
         </div>
         <div className={styles.submitContainer}>
-          <Button name={"Add New User"} handleClick={handleClick} />
-          <Button name={"Edit User"} handleClick={handleClick} />
+          <button
+            className={styles.button}
+            onClick={() => navigate("/adminPage/addUsers")}
+          >
+            Add New User
+          </button>
+          <button
+            className={styles.button}
+            onClick={() => navigate("/adminPage/editUsers")}
+          >
+            Add New User
+          </button>
         </div>
         <div className={styles.submitContainer}>
-          <Button name={"Delete User"} handleClick={handleClick} />
+          <button
+            className={styles.button}
+            onClick={() => navigate("/adminPage/deleteUsers")}
+          >
+            Delete User
+          </button>
         </div>
       </div>
     </div>

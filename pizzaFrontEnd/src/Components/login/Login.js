@@ -3,7 +3,6 @@ import styles from "./login.module.css";
 import constants from "../util/constants";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from "../../context/AuthProvider";
-import Button from "../buttonComponent/Button";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -76,7 +75,7 @@ const Login = () => {
             </div>
           </div>
           <div className={styles.submitContainer}>
-            <Button name={"Login"} />
+            <button className={styles.button}>Login</button>
           </div>
           <div>
             {error ? (
