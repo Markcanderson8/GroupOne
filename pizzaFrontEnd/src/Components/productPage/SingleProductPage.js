@@ -1,9 +1,10 @@
 import React from "react";
 import constants from "../util/constants";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import ItemCard from "../item-card/ItemCard";
 import styles from "./singleProductPage.module.css";
+import logo from "../../images/homelogof.png";
 
 const SingleProductPage = ({ handleClick, cart }) => {
   const [products, setProducts] = useState([]);
@@ -40,7 +41,13 @@ const SingleProductPage = ({ handleClick, cart }) => {
             </div>
             <div>
               <div className={styles.flex}>
+                <Link className={styles.logoLink} to="/">
+                  <img src={logo} alt="pizza logo" className={styles.logo} />
+                </Link>
                 <ItemCard product={filteredProduct} handleClick={handleClick} />
+                <Link className={styles.logoLink} to="/">
+                  <img src={logo} alt="pizza logo" className={styles.logo} />
+                </Link>
               </div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import styles from "./navBar.module.css";
-import logo from "../../images/pizza-logo.avif";
+import logo from "../../images/homelogof.png";
 import { Link } from "react-router-dom";
 import { useAppContext } from "../../context/AuthProvider";
 import cartImg from "../../images/cart-outline.png";
@@ -10,18 +10,24 @@ function NavBar() {
 
   return (
     <div className={styles.navBar}>
-      <div className={styles.alignLogoCenter}>
+      {/* <div className={styles.alignLogoCenter}>
         <Link className={styles.logoLink} to="/">
           <img src={logo} alt="pizza logo" className={styles.logo} />
         </Link>
-      </div>
+      </div> */}
+      {/* <div className={styles.groupOne}>
+        <h1>GROUP ONE!!!</h1>
+      </div> */}
+      <Link className={styles.logoLink} to="/">
+        <img src={logo} alt="pizza logo" className={styles.logo} />
+      </Link>
       <Link className={styles.navLinks} to="/products">
         Products
       </Link>
       <Link className={styles.navLinks} to="/about-us">
         About Us
       </Link>
-      <h1 className={styles.heading}>The Pizza Shack</h1>
+      {/* <h1 className={styles.heading}>The Pizza Shack</h1> */}
       <Link
         className={
           isLoggedIn && role === "admin" ? styles.hidden : styles.navLinks

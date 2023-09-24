@@ -130,6 +130,10 @@
   border-radius: 10px;
 }
 
+.singleCart:hover {
+  background-color: rgb(238, 230, 219);
+}
+
 .cart:hover {
   background-color: rgb(238, 230, 219);
 }
