@@ -1,8 +1,7 @@
-import pepperoni from "../../images/pepperoni.jpg";
-import cheese from "../../images/Cheese-pizza-1.webp";
-import sausage from "../../images/sausage.jpg";
 import styles from "./home.module.css";
 import { Link } from "react-router-dom";
+import cheeseVid from "../../videos/cheese.mp4";
+import peopleEating from "../../videos/PeopleEating.mp4";
 
 function Home({ cart, isLoggedIn }) {
   return (
@@ -14,18 +13,14 @@ function Home({ cart, isLoggedIn }) {
       )}
       <h1>Any Cheese, Pepperoni, or Cheese 10% off daily!!!</h1>
       <div className={styles.pizzas}>
-        <Link to="/products/4">
-          <img className={styles.sausage} src={sausage} alt="sausage pizza" />
+        <Link to="/products/2">
+          <video className={styles.sausage} src={cheeseVid} loop autoPlay />
+        </Link>
+        <Link to="/products">
+          <video className={styles.cheese} src={peopleEating} loop autoPlay />
         </Link>
         <Link to="/products/2">
-          <img className={styles.cheese} src={cheese} alt="cheese pizza" />
-        </Link>
-        <Link to="/products/3">
-          <img
-            className={styles.pepperoni}
-            src={pepperoni}
-            alt="pepperoni pizza"
-          />
+          <video className={styles.sausage} src={cheeseVid} loop autoPlay />
         </Link>
       </div>
     </div>

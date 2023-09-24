@@ -8,7 +8,7 @@
 /* Card styles */
 .card {
   width: 100%;
-  max-width: 350px; /* Adjust the maximum width as needed */
+  max-width: 300px; /* Adjust the maximum width as needed */
   border: 1px solid rgb(113, 94, 94); /* Border color */
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -39,8 +39,10 @@
 /* Image styles */
 .img {
   max-width: 100%;
-  height: auto;
+  height: 300px;
   display: block;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 /* Card body styles */

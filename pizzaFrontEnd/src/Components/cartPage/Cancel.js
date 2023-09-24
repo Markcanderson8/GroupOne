@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./cancel.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Cancel = ({ cart }) => {
+  const message = "Sorry to see you cancelled your payment!";
+  const navigate = useNavigate();
+
+  const timer = () => {
+    setTimeout(() => {
+      navigate("/cart");
+    }, 2000);
+  };
+
+  useEffect(() => {
+    timer();
+  });
+
   return (
     <>
       {cart.length > 0 ? (
@@ -10,7 +24,7 @@ const Cancel = ({ cart }) => {
         <div className={styles.hideNumItems}>{cart.length}</div>
       )}
       <div className={styles.heading}>
-        <h1>Sorry to see you cancelled your Stripe payment!</h1>
+        <h1>{message}</h1>
       </div>
     </>
   );

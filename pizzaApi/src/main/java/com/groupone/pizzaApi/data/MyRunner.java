@@ -40,17 +40,17 @@ public class MyRunner implements CommandLineRunner {
     User user2;
     User user3;
 
-    String pepperoniImg = "https://www.meijer.com/content/dam/meijer/product/0007/21/8063/47/0007218063473_1_A1C1_0600.png";
-    String cheeseImg = "https://www.meijer.com/content/dam/meijer/product/0007/21/8063/42/0007218063429_1_A1C1_0600.png";
+    String pepperoniImg = "https://storage.googleapis.com/pizzafrontend1/pepperonif.png";
+    String cheeseImg = "https://storage.googleapis.com/pizzafrontend1/cheesef.png";
     String pineappleImg = "";
-    String veganImg = "https://www.meijer.com/content/dam/meijer/product/0042/27/2001/03/0042272001033_0_A1C1_0600.jpg";
-    String chickenBaconRanch = "https://www.meijer.com/content/dam/meijer/product/0071/92/1510/38/0071921510381_0_A1C1_0600.png";
+    String veganImg = "https://storage.googleapis.com/pizzafrontend1/veganpizzaf.png";
+    String sausage = "https://storage.googleapis.com/pizzafrontend1/sausagef.png";
     String pepsiImg = "https://www.meijer.com/content/dam/meijer/product/0012/00/0002/30/0012000002304_a1c1_0600.png";
     String spriteImg = "https://www.meijer.com/content/dam/meijer/product/0049/00/0050/15/0049000050158_a1c1_0600.png";
     String fantaImg = "https://www.meijer.com/content/dam/meijer/product/0004/90/0005/02/0004900005025_2_A1C1_0600.png";
     String drPepperImg = "https://www.meijer.com/content/dam/meijer/product/0078/00/0082/46/0078000082463_0_A1C1_0600.jpg";
     String cokeImg = "https://www.meijer.com/content/dam/meijer/product/0004/90/0005/01/0004900005010_2_A1C1_0600.png";
-    String supremeImg = "https://www.meijer.com/content/dam/meijer/product/0007/21/8063/47/0007218063471_1_A1C1_0600.png";
+    String supremeImg = "https://storage.googleapis.com/pizzafrontend1/supremef1.png";
     String cheerWine = "";
 
     @Override
@@ -69,7 +69,7 @@ public class MyRunner implements CommandLineRunner {
         item1 = new Item("Supreme", "7.99", "12\"", supremeImg, user1);
         item2 = new Item("Cheese", "5.99", "12\"", cheeseImg, user2);
         item3 = new Item("Pepperoni", "6.99", "12\"", pepperoniImg);
-        item4 = new Item("Sausage", "6.99", "12\"", chickenBaconRanch, user3);
+        item4 = new Item("Sausage", "6.99", "12\"", sausage, user3);
         item5 = new Item("Pepsi", "2.99", "2L", pepsiImg,user3);
         item6 = new Item("Vegan", "8.99", "12\"", veganImg);
         item7 = new Item("Dr. Pepper", "2.99", "2L", drPepperImg);

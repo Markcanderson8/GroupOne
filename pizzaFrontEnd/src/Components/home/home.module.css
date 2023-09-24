@@ -13,13 +13,15 @@
 }
 
 .sausage {
-    width: 400px;
+    width: 450px;
     margin: 2rem;
+    border-radius: 20px;
 }
 
 .cheese {
-    width: 500px;
+    width: 600px;
     margin: 2rem;
+    border-radius: 20px;
 }
 
 .pepperoni {

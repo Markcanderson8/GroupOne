@@ -6,7 +6,9 @@ function Footer({ cart }) {
 
   return (
     <div>
-      {location.pathname === "/cart" && cart.length === 0 ? (
+      {(location.pathname === "/cart" && cart.length === 0) ||
+      location.pathname === "/" ||
+      location.pathname === "/about-us" ? (
         <div className={styles.emptyCart}>
           <h4>Created by: GroupOne</h4>
         </div>
