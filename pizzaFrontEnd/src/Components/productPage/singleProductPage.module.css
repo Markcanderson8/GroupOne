@@ -14,3 +14,16 @@
 .hideNumItems {
   display: none;
 }
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.img {
+  width: 500px;
+  border-radius: 20px;
+  opacity: 80%;
+  box-shadow: 3px 3px 8px gray;
+}

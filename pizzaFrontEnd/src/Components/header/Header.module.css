@@ -1,8 +1,12 @@
 .header {
     height: 100px;
-    background-color: bisque;
+    /* background: linear-gradient(45deg, rgba(118, 160, 169, 0.732) 0 50%, rgb(179, 179, 197, 0.8) 50% 75%, white 75% 100%); */
+    background: linear-gradient(217deg,rgba(118, 160, 169, 0.732), rgba(255,0,0,0) 70.71%),
+            linear-gradient(336deg, rgb(250, 247, 247), rgba(118, 160, 169, 0.732) 70.71%),
+            linear-gradient(127deg, rgba(0, 0, 255, 0.659), rgba(46, 57, 60, 0.732) 70.71%);
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 4px 2px -2px gray;
 }

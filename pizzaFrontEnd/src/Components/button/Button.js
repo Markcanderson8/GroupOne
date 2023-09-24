@@ -7,6 +7,12 @@ const Button = ({ name }) => {
   const pathToPage = (name) => {
     let p = "";
     switch (name) {
+      case "Cancel":
+        p = "/cart/purchase/cancel";
+        break;
+      case "Purchase Items":
+        p = "/cart/purchase";
+        break;
       case "Add Item":
         p = "/adminPage/addItems";
         break;

@@ -3,6 +3,7 @@ import styles from "./cart.module.css";
 import { useNavigate } from "react-router-dom";
 import trashCan from "../../images/trash-can-solid.svg";
 import { Link } from "react-router-dom";
+import Button from "../button/Button";
 
 const Cart = ({ cart, setCart, handleChange }) => {
   // this is the cart
@@ -83,12 +84,7 @@ const Cart = ({ cart, setCart, handleChange }) => {
               >
                 Clear Out Cart
               </button>
-              <button
-                className={styles.purchaseButton}
-                onClick={() => navigate("/cart/purchase")}
-              >
-                Purchase Items
-              </button>
+              <Button name={"Purchase Items"} />
             </div>
           </>
         ) : (

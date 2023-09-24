@@ -39,7 +39,7 @@ const SingleProductPage = ({ handleClick, cart }) => {
               <h1>{filteredProduct.itemName}</h1>
             </div>
             <div>
-              <div>
+              <div className={styles.flex}>
                 <ItemCard product={filteredProduct} handleClick={handleClick} />
               </div>
             </div>

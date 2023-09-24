@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./paymentPage.module.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Button from "../button/Button";
 
 const PaymentPage = ({ cart, setCart }) => {
   const [ccNumber, setCCNumber] = useState("");
@@ -111,16 +112,8 @@ const PaymentPage = ({ cart, setCart }) => {
           ) : null}
         </div>
         <div className={styles.submitContainer}>
-          <button
-            className={styles.button}
-            type="button"
-            onClick={() => navigate("/cart/purchase/cancel")}
-          >
-            Cancel
-          </button>
-          <button className={styles.button} type="submit">
-            Purchase
-          </button>
+          <Button name={"Cancel"} />
+          <Button name={"Purchase"} />
         </div>
       </form>
     </div>

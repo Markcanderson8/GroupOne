@@ -1,6 +1,9 @@
 .footer {
     height: 100px;
-    background-color: bisque;
+    background: linear-gradient(217deg,rgba(118, 160, 169, 0.732), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgb(250, 247, 247), rgba(118, 160, 169, 0.732) 70.71%),
+            linear-gradient(336deg, rgba(0, 0, 255, 0.659), rgba(46, 57, 60, 0.732) 70.71%);
+    /* background-color: rgba(118, 160, 169, 0.732); */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -11,7 +14,10 @@
 
 .emptyCart {
     height: 100px;
-    background-color: bisque;
+    background: linear-gradient(217deg,rgba(118, 160, 169, 0.732), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgb(250, 247, 247), rgba(118, 160, 169, 0.732) 70.71%),
+            linear-gradient(336deg, rgba(0, 0, 255, 0.659), rgba(46, 57, 60, 0.732) 70.71%);
+    /* background-color: rgba(118, 160, 169, 0.732); */
     width: 100%;
     display: flex;
     justify-content: center;
