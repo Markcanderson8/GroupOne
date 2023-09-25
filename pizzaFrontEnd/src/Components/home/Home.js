@@ -11,7 +11,7 @@ function Home({ cart, isLoggedIn }) {
       ) : (
         <div className={styles.hideNumItems}>{cart.length}</div>
       )}
-      <h1>Any Cheese, Pepperoni, or Cheese 10% off daily!!!</h1>
+      <h1>Any Cheese, Pepperoni, or Sausage 10% off daily!!!</h1>
       <div className={styles.pizzas}>
         <Link to="/products/2">
           <video className={styles.sausage} src={cheeseVid} loop autoPlay />
